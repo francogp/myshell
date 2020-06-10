@@ -81,10 +81,14 @@ plugins=(
   git
   colored-man-pages
   zsh_reload
+  # ssh-agent
+  rsync
   zsh-interactive-cd
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
+
+# zstyle :omz:plugins:ssh-agent identities id_rsa
 
 source $ZSH/oh-my-zsh.sh
 
