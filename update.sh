@@ -15,6 +15,6 @@ echo "* zsh.."
 echo "
 **************************
 RUN THIS!
-upgrade_oh_my_zsh
+
+upgrade_oh_my_zsh && src
 ";
-echo "**** RESTART TERMINAL ****";

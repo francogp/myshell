@@ -80,6 +80,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
   colored-man-pages
+  zsh_reload
   zsh-interactive-cd
   zsh-autosuggestions
   zsh-syntax-highlighting
