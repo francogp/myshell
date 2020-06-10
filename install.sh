@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 echo "**** Installing... ****"
-sudo apt udate && sudo apt install -y zsh rsync fonts-powerline || exit 100;
+sudo apt update && sudo apt install -y zsh rsync fonts-powerline || exit 100;
 fc-cache -vf;
 sudo apt install -y fzf;
 if [[ $? > 0 ]]
 then
-    echo "fzf not found, tryiong to manually install it..."
+    echo "fzf not found, trying to manually installation..."
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf || exit 100
     ~/.fzf/install || exit 100
 fi
@@ -29,5 +29,5 @@ https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.t
 https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
 https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
 
-**** RESTART TERMINAL ****
+**** RESTART TERMINAL! ****
 ";
