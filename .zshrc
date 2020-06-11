@@ -155,3 +155,5 @@ alias lc='colorls -lAh --sd'
 alias ll='colorls -lh --sd'
 alias ls='colorls --sd'
 alias lsa='colorls -lah --sd'
+
+alias uos='sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove' 
