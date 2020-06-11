@@ -14,7 +14,7 @@ if [ "${OLD_UBUNTU}" = true ]; then
   sudo gem update --system 3.0.6 || exit 100
   if [ ! -d "${HOME}/.fzf" ]; then
     echo "fzf not found, trying to manually installation..."
-    git clone --depth 1 https://github.com/junegunn/fzf.git ${HOME}/.fzf || exit 100
+    git clone --depth 1 https://github.com/junegunn/fzf.git "${HOME}"/.fzf || exit 100
     "${HOME}"/.fzf/install || exit 100
   fi
 else
