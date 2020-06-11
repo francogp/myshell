@@ -1,19 +1,18 @@
 #!/usr/bin/env bash
 
 OLD_UBUNTU=false
-if hostnamectl | grep -q "18.04"; then
+if lsb_release -a | grep -q "18.04"; then
   echo "Old ubuntu detected"
   OLD_UBUNTU=true
 fi
 
 echo "**** Installing... ****"
-sudo apt update && sudo apt install -y zsh rsync fonts-powerline ruby ruby-dev && sudo gem update --system && sudo gem install colorls || exit 100
+sudo apt update && sudo apt install -y zsh rsync fonts-powerline ruby ruby-dev build-essential && sudo gem install rubygems-update && sudo gem update --system && sudo gem install colorls || exit 100
 
 # fix for old ubuntu fzf
 if [ "${OLD_UBUNTU}" = true ]; then
   echo "* Applying old ubuntu patches"
-  sudo gem update --system 3.0.6 || exit 100
-  sudo gem pristine rake || exit 100
+  sudo gem update --system 3.0.6 && sudo gem install colorls && sudo gem pristine rake || exit 100
   if [ ! -d "${HOME}/.fzf" ]; then
     echo "* fzf not found, trying to install..."
     git clone --depth 1 https://github.com/junegunn/fzf.git "${HOME}"/.fzf || exit 100
