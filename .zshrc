@@ -148,9 +148,9 @@ bindkey '^h' _change_dir
 zle -N _reverse_search
 bindkey '^r' _reverse_search
 
-alias l='colorls -lah'
-alias la='colorls -lAh'
+alias l='colorls -lah --sd'
+alias la='colorls -lAh --sd'
 alias lc='colorls -lAh --sd'
-alias ll='colorls -lh'
+alias ll='colorls -lh --sd'
 alias ls='colorls --sd'
-alias lsa='colorls -lah'
+alias lsa='colorls -lah --sd'
