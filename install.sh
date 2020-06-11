@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 echo "**** Installing... ****"
-sudo apt update && sudo apt install -y zsh rsync fonts-powerline ruby ruby-dev && sudo gem install rubygems-update && sudo update_rubygems && sudo gem update --system 3.0.6 && sudo gem install colorls || exit 100;
+sudo apt update && sudo apt install -y zsh rsync fonts-powerline ruby ruby-dev && sudo gem update --system && sudo gem install colorls || exit 100;
+# sudo gem install rubygems-update && sudo update_rubygems &&
 fc-cache -vf;
 sudo apt install -y fzf;
 
