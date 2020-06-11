@@ -15,12 +15,10 @@ if [ "${OLD_UBUNTU}" = true ]; then
   sudo gem update --system 3.0.6 || exit 100
   sudo gem pristine rake || exit 100
   if [ ! -d "${HOME}/.fzf" ]; then
-    echo "* fzf not found, trying to manually installation..."
+    echo "* fzf not found, trying to install..."
     git clone --depth 1 https://github.com/junegunn/fzf.git "${HOME}"/.fzf || exit 100
-    "${HOME}"/.fzf/install || exit 100
-  else
-    echo "* fzf already installed.. ignoring"
   fi
+  "${HOME}"/.fzf/install || exit 100
 else
   sudo apt install -y fzf || exit 100
 fi

@@ -93,6 +93,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source $(dirname $(gem which colorls))/tab_complete.sh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # User configuration
 
