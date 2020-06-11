@@ -83,6 +83,7 @@ plugins=(
   zsh_reload
   # ssh-agent
   rsync
+  command-not-found
   zsh-interactive-cd
   zsh-autosuggestions
   zsh-syntax-highlighting
@@ -91,6 +92,7 @@ plugins=(
 # zstyle :omz:plugins:ssh-agent identities id_rsa
 
 source $ZSH/oh-my-zsh.sh
+source $(dirname $(gem which colorls))/tab_complete.sh
 
 # User configuration
 
@@ -145,3 +147,10 @@ bindkey '^h' _change_dir
 
 zle -N _reverse_search
 bindkey '^r' _reverse_search
+
+alias l='colorls -lah'
+alias la='colorls -lAh'
+alias lc='colorls -lAh --sd'
+alias ll='colorls -lh'
+alias ls='colorls --sd'
+alias lsa='colorls -lah'

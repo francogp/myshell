@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "**** Installing... ****"
-sudo apt update && sudo apt install -y zsh rsync fonts-powerline || exit 100;
+sudo apt update && sudo apt install -y zsh rsync fonts-powerline && sudo gem install colorls || exit 100;
 fc-cache -vf;
 sudo apt install -y fzf;
 

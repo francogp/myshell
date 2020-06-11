@@ -10,6 +10,8 @@ echo "* autosuggestions.."
 git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions pull || exit 100;
 echo "* highlighting.."
 git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting pull || exit 100;
+echo "* colorsls.."
+gem update colorls
 echo "* zsh.."
 
 echo "
