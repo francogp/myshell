@@ -82,6 +82,7 @@ plugins=(
   colored-man-pages
   zsh_reload
   # ssh-agent
+  bgnotify
   rsync
   command-not-found
   zsh-interactive-cd
@@ -130,7 +131,9 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-PATH=${PATH}${PATH:+:}/home/franco/.automaticScripts/
+[[ ! -d ~/.automaticScripts ]] || PATH=${PATH}${PATH:+:}~/.automaticScripts
+[[ ! -d ~/.local/bin ]] || PATH=${PATH}${PATH:+:}~/.local/bin
+[[ ! -d ~/bin ]] || PATH=${PATH}${PATH:+:}~/bin
 export PATH
 
 _change_dir() {
