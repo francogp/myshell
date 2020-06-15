@@ -799,3 +799,6 @@ flycheck_*.el
 
 ### SVN template
 .svn/
+
+### my cache
+.myCache
