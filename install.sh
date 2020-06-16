@@ -15,7 +15,7 @@ if [ "${OLD_UBUNTU}" = true ]; then
   sudo gem update --system 3.0.6 && sudo gem install colorls && sudo gem pristine rake || exit 100
   if [ ! -d "${HOME}/.fzf" ]; then
     echo "* fzf not found, trying to install..."
-    git clone --depth 1 https://github.com/junegunn/fzf.git "${HOME}"/.fzf || exit 100
+    git clone --depth 1 https://github.com/junegunn/fzf.git "${HOME}/.fzf" || exit 100
   fi
   "${HOME}"/.fzf/install || exit 100
 else
@@ -39,6 +39,7 @@ rsync -ahzc "${HOME}/.myzsh/.zshrc" "${HOME}/"
 echo "**** Configuring... ****"
 chsh -s "$(which zsh)"
 
+# shellcheck source="${HOME}/.myzsh/updateFonts.sh"
 source "${HOME}/.myzsh/updateFonts.sh"
 
 echo "**** RESTART TERMINAL! ****"
