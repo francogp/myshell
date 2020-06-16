@@ -43,9 +43,17 @@ if grep -iq Microsoft /proc/version; then
   echo " ==============DONE==================="
   echo "Ubuntu on Windows"
   echo "*** Install this fonts MANUALLY ***"
-  echo "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Meslo/M/Regular/complete/Meslo%20LG%20M%20Regular%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf"
-  echo "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Meslo/M/Regular/complete/Meslo%20LG%20M%20Regular%20Nerd%20Font%20Complete%20Windows%20Compatible.ttf"
-  echo "**** Configure terminal to use 'MesloLGS NF Regular' font ****"
+  echo "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf"
+  echo "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Windows%20Compatible.ttf"
+  echo "**** Configure terminal to use this fonts: 'JetBrainsMono NF' ****"
+  echo "**** Configure editors to use this font: 'JetBrainsMono NF' ****"
+else
+  mkdir -p "${HOME}/.local/share/fonts" || exit 100
+  cd "${HOME}/.local/share/fonts" && wget "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf" || exit 100
+  cd "${HOME}/.local/share/fonts" && wget "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete.ttf" || exit 100
+  fc-cache -f -v || exit 100
+  echo "**** Configure terminal to use this fonts: 'JetBrainsMono Nerd Font Mono Regular' ****"
+  echo "**** Configure editors to use this font: 'JetBrainsMono Nerd Font'' ****"
 fi
 
 echo "**** RESTART TERMINAL! ****"
