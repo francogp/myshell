@@ -43,9 +43,9 @@ if grep -iq Microsoft /proc/version; then
   echo " ==============DONE==================="
   echo "Ubuntu on Windows"
   echo "*** Install this fonts MANUALLY ***"
-  echo "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Windows%20Compatible.ttf"
-  echo "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf"
-  echo "**** Configure terminal to use 'JetBrainsMono NF' font ****"
+  echo "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Meslo/M/Regular/complete/Meslo%20LG%20M%20Regular%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf"
+  echo "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Meslo/M/Regular/complete/Meslo%20LG%20M%20Regular%20Nerd%20Font%20Complete%20Windows%20Compatible.ttf"
+  echo "**** Configure terminal to use 'MesloLGS NF Regular' font ****"
 fi
 
 echo "**** RESTART TERMINAL! ****"
