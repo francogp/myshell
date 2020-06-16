@@ -39,7 +39,13 @@ rsync -ahzc "${HOME}/.myzsh/.zshrc" "${HOME}/"
 echo "**** Configuring... ****"
 chsh -s "$(which zsh)"
 
-# shellcheck source="${HOME}/.myzsh/updateFonts.sh"
-source "${HOME}/.myzsh/updateFonts.sh"
+if grep -iq Microsoft /proc/version; then
+  echo " ==============DONE==================="
+  echo "Ubuntu on Windows"
+  echo "*** Install this fonts MANUALLY ***"
+  echo "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Windows%20Compatible.ttf"
+  echo "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf"
+  echo "**** Configure terminal to use 'JetBrainsMono NF' font ****"
+fi
 
 echo "**** RESTART TERMINAL! ****"
