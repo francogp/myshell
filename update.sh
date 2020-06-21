@@ -18,7 +18,7 @@ echo "* zsh.."
 
 echo "
 **************************
-RUN THIS!
+if you run manually update.sh, RUN THIS!
 
 upgrade_oh_my_zsh && src
 "

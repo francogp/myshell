@@ -22,22 +22,19 @@ else
   sudo apt install -y fzf || exit 100
 fi
 
-fc-cache -vf
-
 cd "${HOME}" || exit 100
 
 # removing old files
 sudo rm -rf "${HOME}/.oh-my-zsh" || exit 100
-read -p "***=== Type 'exit' and enter, after next prompt!. (enter to continue) ===*** " CONT
+read -p "***=== Press enter, then type 'exit' and enter, after next prompt!. ===*** " CONT
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || exit 100
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/themes/powerlevel10k" || exit 100
 git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" || exit 100
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" || exit 100
-rsync -ahzc "${HOME}/.myzsh/.p10k.zsh" "${HOME}/"
-rsync -ahzc "${HOME}/.myzsh/.zshrc" "${HOME}/"
+
+bash "${HOME}/.myzsh/update.sh" || exit 100
 
 echo "**** Configuring... ****"
-chsh -s "$(which zsh)"
 
 if grep -iq Microsoft /proc/version; then
   echo " ==============DONE==================="
@@ -51,9 +48,10 @@ else
   mkdir -p "${HOME}/.local/share/fonts" || exit 100
   cd "${HOME}/.local/share/fonts" && wget "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf" || exit 100
   cd "${HOME}/.local/share/fonts" && wget "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete.ttf" || exit 100
-  fc-cache -f -v || exit 100
   echo "**** Configure terminal to use this fonts: 'JetBrainsMono Nerd Font Mono Regular' ****"
   echo "**** Configure editors to use this font: 'JetBrainsMono Nerd Font'' ****"
 fi
 
+fc-cache -f -v || exit 100
+chsh -s "$(which zsh)"  || exit 100
 echo "**** RESTART TERMINAL! ****"
