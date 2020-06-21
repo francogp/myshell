@@ -40,12 +40,12 @@ chsh -s "$(which zsh)"  || exit 100
 
 if grep -iq Microsoft /proc/version; then
   fc-cache -f -v || exit 100
-  echo "* Ubuntu on Windows *"
+  echo ""
+  echo "************************  DONE  **********************************"
+  echo "* Ubuntu on Windows detected *"
   echo "*** Install this fonts MANUALLY ***"
   echo "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf"
   echo "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Windows%20Compatible.ttf"
-  echo ""
-  echo "************************  DONE  **********************************"
   echo "**** Configure terminal to use this fonts: 'JetBrainsMono NF' ****"
   echo "**** Configure editors to use this font: 'JetBrainsMono NF' ****"
 else
