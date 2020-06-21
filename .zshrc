@@ -94,7 +94,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source $(dirname $(gem which colorls))/tab_complete.sh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 
 # User configuration
 
@@ -130,10 +130,10 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-[[ ! -d ~/.automaticScripts ]] || PATH=${PATH}${PATH:+:}~/.automaticScripts
-[[ ! -d ~/.local/bin ]] || PATH=${PATH}${PATH:+:}~/.local/bin
-[[ ! -d ~/bin ]] || PATH=${PATH}${PATH:+:}~/bin
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+[[ -d ~/.automaticScripts ]] && PATH=${PATH}${PATH:+:}~/.automaticScripts
+[[ -d ~/.local/bin ]] && PATH=${PATH}${PATH:+:}~/.local/bin
+[[ -d ~/bin ]] && PATH=${PATH}${PATH:+:}~/bin
 export PATH
 
 _change_dir() {

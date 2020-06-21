@@ -49,7 +49,7 @@ else
   cd "${HOME}/.local/share/fonts" && wget "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf" || exit 100
   cd "${HOME}/.local/share/fonts" && wget "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete.ttf" || exit 100
   echo "**** Configure terminal to use this fonts: 'JetBrainsMono Nerd Font Mono Regular' ****"
-  echo "**** Configure editors to use this font: 'JetBrainsMono Nerd Font'' ****"
+  echo "**** Configure editors to use this font: 'JetBrainsMono Nerd Font' ****"
 fi
 
 fc-cache -f -v || exit 100
