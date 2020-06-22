@@ -163,6 +163,8 @@ alias uos='sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove'
 alias uzsh='bash ~/.myzsh/update.sh && upgrade_oh_my_zsh && src'
 alias pzsh='cd ~/.myzsh && git pull && bash ~/.myzsh/update.sh && upgrade_oh_my_zsh && src'
 
+alias c='batcat'
+
 # #Tilix fix
 # if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 #     source /etc/profile.d/vte.sh

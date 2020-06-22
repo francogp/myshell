@@ -7,7 +7,7 @@ if lsb_release -a | grep -q "18.04"; then
 fi
 
 echo "**** Installing... ****"
-sudo apt update && sudo apt install -y curl zsh rsync fonts-powerline ruby ruby-dev build-essential && sudo gem install rubygems-update && sudo gem update --system && sudo gem install colorls || exit 100
+sudo apt update && sudo apt install -y curl zsh rsync fonts-powerline ruby ruby-dev build-essential bat && sudo gem install rubygems-update && sudo gem update --system && sudo gem install colorls || exit 100
 
 # fix for old ubuntu fzf
 if [ "${OLD_UBUNTU}" = true ]; then
