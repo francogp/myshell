@@ -5,3 +5,4 @@ set constantshow
 set locking
 set tabstospaces
 set trimblanks
+set smooth
