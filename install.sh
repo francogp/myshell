@@ -7,7 +7,7 @@ if lsb_release -a | grep -q "18.04"; then
 fi
 
 echo "**** Installing... ****"
-sudo apt update && sudo apt install -y curl zsh rsync ruby ruby-dev build-essential bat && sudo gem install rubygems-update && sudo gem update --system && sudo gem install colorls || exit 100
+sudo apt update && sudo apt install -y curl zsh rsync ruby ruby-dev build-essential && sudo gem install rubygems-update && sudo gem update --system && sudo gem install colorls || exit 100
 
 # fix for old ubuntu fzf
 if [ "${OLD_UBUNTU}" = true ]; then
@@ -19,7 +19,7 @@ if [ "${OLD_UBUNTU}" = true ]; then
   fi
   "${HOME}"/.fzf/install || exit 100
 else
-  sudo apt install -y fzf || exit 100
+  sudo apt install -y fzf bat || exit 100
 fi
 
 # removing old files
