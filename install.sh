@@ -48,8 +48,8 @@ if grep -iq Microsoft /proc/version; then
   echo "**** Configure editors to use this font: 'JetBrainsMono NF' ****"
 else
   rm -rf "${HOME}/.myzsh/.myCache" &&  mkdir -p "${HOME}/.myzsh/.myCache" && cd "${HOME}/.myzsh/.myCache" || exit 100
-  wget "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf" || exit 100
-  wget "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete.ttf" || exit 100
+  wget --no-check-certificate --content-disposition "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf" || exit 100
+  wget --no-check-certificate --content-disposition "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete.ttf" || exit 100
   mkdir -p "${HOME}/.local/share/fonts" || exit 100
   rsync -ahzc "${HOME}/.myzsh/.myCache/" "${HOME}/.local/share/fonts"
   fc-cache -f -v || exit 100
