@@ -133,7 +133,10 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 [[ -d ~/.automaticScripts ]] && PATH=${PATH}${PATH:+:}~/.automaticScripts
 [[ -d ~/.local/bin ]] && PATH=${PATH}${PATH:+:}~/.local/bin
+[[ -d ~/.local/sbin ]] && PATH=${PATH}${PATH:+:}~/.local/sbin
 [[ -d ~/bin ]] && PATH=${PATH}${PATH:+:}~/bin
+[[ -d ~/sbin ]] && PATH=${PATH}${PATH:+:}~/sbin
+
 export PATH
 
 _change_dir() {
