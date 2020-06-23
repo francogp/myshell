@@ -5,7 +5,8 @@ echo "* configs.."
 rsync -ahzc "${HOME}/.myzsh/.p10k.zsh" "${HOME}/" || exit 100
 rsync -ahzc "${HOME}/.myzsh/.zshrc" "${HOME}/" || exit 100
 rsync -ahzc "${HOME}/.myzsh/.nanorc" "${HOME}/" || exit 100
-mkdir -p "${HOME}/.config/neofetch/"  || exit 100
+sudo rsync -ahzc "${HOME}/.myzsh/.nanorc" "/root/" || exit 100
+mkdir -p "${HOME}/.config/neofetch/" || exit 100
 rsync -ahzc "${HOME}/.myzsh/neofetch.conf" "${HOME}/.config/neofetch/config.conf" || exit 100
 echo "* powerlevel10k.."
 git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k pull || exit 100

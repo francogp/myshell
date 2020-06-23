@@ -115,7 +115,7 @@ source $(dirname $(gem which colorls))/tab_complete.sh
 
 # Remove older command from the history if a duplicate is to be added.
 setopt HIST_IGNORE_ALL_DUPS
-setopt +o nomatch
+setopt NULL_GLOB
 
 # Set what highlighters will be used.
 # See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md
@@ -155,6 +155,8 @@ bindkey '^h' _change_dir
 
 zle -N _reverse_search
 bindkey '^r' _reverse_search
+
+alias sudo='sudo '
 
 alias l='colorls -lah --sd'
 alias la='colorls -lAh --sd'
