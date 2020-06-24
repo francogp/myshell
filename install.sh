@@ -37,7 +37,6 @@ echo "**** Configuring... ****"
 chsh -s "$(which zsh)"  || exit 100
 
 if grep -iq Microsoft /proc/version; then
-  fc-cache -f -v || exit 100
   echo ""
   echo "************************  DONE  **********************************"
   echo "* Ubuntu on Windows detected *"
