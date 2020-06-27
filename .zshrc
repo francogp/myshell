@@ -156,8 +156,17 @@ bindkey '^h' _change_dir
 zle -N _reverse_search
 bindkey '^r' _reverse_search
 
-alias sudo='sudo '
+# FIXES! DO NOT CHANGE
+alias man='nocorrect man '
+alias mv='nocorrect mv '
+alias mysql='nocorrect mysql '
+alias mkdir='nocorrect mkdir '
+alias sudo='nocorrect sudo '
+if [[ -f /usr/bin/batcat ]]; then
+   alias bat='batcat'
+fi
 
+# CUSTOM ALIASES
 alias l='colorls -lah --sd'
 alias la='colorls -lAh --sd'
 alias lc='colorls -lAh --sd'
@@ -168,7 +177,3 @@ alias lsa='colorls -lah --sd'
 alias uos='sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove'
 alias uzsh='bash ~/.myzsh/update.sh && upgrade_oh_my_zsh && src'
 alias pzsh='cd ~/.myzsh && git pull && bash ~/.myzsh/update.sh && upgrade_oh_my_zsh && src'
-
-if [[ -f /usr/bin/batcat ]]; then
-   alias bat='batcat'
-fi
