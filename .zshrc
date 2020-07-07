@@ -160,6 +160,7 @@ bindkey '^r' _reverse_search
 # FIXES! DO NOT CHANGE
 alias man='nocorrect man '
 alias mv='nocorrect mv '
+alias mv='nocorrect cp '
 alias mysql='nocorrect mysql '
 alias mkdir='nocorrect mkdir '
 alias sudo='nocorrect sudo '
