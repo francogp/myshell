@@ -15,12 +15,12 @@ git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions pull || ex
 echo "* highlighting.."
 git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting pull || exit 100
 echo "* colorsls.."
-gem update colorls
+sudo gem update colorls || exit 100
 echo "* zsh.."
 
 echo "
 **************************
-if you run manually update.sh, RUN THIS!
+if you manually run update.sh, RUN THIS COMMANDS!
 
 upgrade_oh_my_zsh && src
 "
