@@ -7,3 +7,5 @@ echo "install nvm"
 sudo curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 echo "install yarn"
 sudo npm i -g yarn
+
+bash ~/.myzsh/patch.update.sh
