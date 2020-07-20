@@ -1,32 +1,18 @@
 # custom update by marcelo
-#!/usr/bin/env bash
-
-echo "**** Updating ... ****"
-echo "* configs.."
-rsync -ahzc "${HOME}/.myzsh/.p10k.zsh" "${HOME}/" || exit 100
-rsync -ahzc "${HOME}/.myzsh/marcelo/.zshrc" "${HOME}/" || exit 100
-rsync -ahzc "${HOME}/.myzsh/.nanorc" "${HOME}/" || exit 100
-sudo rsync -ahzc "${HOME}/.myzsh/.nanorc" "/root/" || exit 100
-mkdir -p "${HOME}/.config/neofetch/" || exit 100
-rsync -ahzc "${HOME}/.myzsh/neofetch.conf" "${HOME}/.config/neofetch/config.conf" || exit 100
-echo "* powerlevel10k.."
-git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k pull || exit 100
-echo "* autosuggestions.."
-git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions pull || exit 100
-echo "* highlighting.."
-git -C ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting pull || exit 100
-echo "* colorsls.."
-sudo gem update colorls || exit 100
+# add at the end to .zshrc
+echo '
+echo "install nvm"
+sudo apt install xdg-utils
 echo "install nvm"
 sudo curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 echo "install yarn"
 sudo npm i -g yarn
-echo "* zsh.."
+' > update.sh
 
+echo '
+alias pzshm='pzsh && bash ~/.myzsh/updatem.sh'
+alias open='xdg-open'
 
-echo "
-**************************
-if you manually run update.sh, RUN THIS COMMANDS!
-
-upgrade_oh_my_zsh && src
-"
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm 
+' > .zshrc
