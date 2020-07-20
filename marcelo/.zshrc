@@ -180,3 +180,8 @@ alias uos='sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove'
 alias uzsh='bash ~/.myzsh/update.sh && upgrade_oh_my_zsh && src'
 alias pzsh='cd ~/.myzsh && git pull && bash ~/.myzsh/update.sh && upgrade_oh_my_zsh && src'
 alias pzshm='pzsh && bash ~/.myzsh/updatem.sh'
+
+alias open='xdg-open'
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
