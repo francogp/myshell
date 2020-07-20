@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 bash ~/.myzsh/install.sh
 
 echo "install nvm"
