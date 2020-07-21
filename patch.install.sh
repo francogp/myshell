@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 bash ~/.myzsh/install.sh
 
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 echo "install nvm"
 sudo apt install xdg-utils || exit 100
 echo "install nvm" 
