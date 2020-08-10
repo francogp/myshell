@@ -22,5 +22,5 @@ echo "
 **************************
 if you manually run update.sh, RUN THIS COMMANDS!
 
-upgrade_oh_my_zsh && src
+omz update && src
 "

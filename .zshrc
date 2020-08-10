@@ -177,5 +177,5 @@ alias ls='colorls --sd'
 alias lsa='colorls -lah --sd'
 
 alias uos='sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove'
-alias uzsh='bash ~/.myzsh/update.sh && upgrade_oh_my_zsh && src'
-alias pzsh='cd ~/.myzsh && git pull && bash ~/.myzsh/update.sh && upgrade_oh_my_zsh && src'
+alias uzsh='bash ~/.myzsh/update.sh && omz update && src'
+alias pzsh='cd ~/.myzsh && git pull && bash ~/.myzsh/update.sh && omz update && src'
