@@ -140,6 +140,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 [[ -d ~/sbin ]] && PATH=${PATH}${PATH:+:}~/sbin
 
 export PATH
+export LC_ALL=C
 
 _change_dir() {
   dirtomove=$(ls | fzf)
