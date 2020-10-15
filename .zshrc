@@ -177,9 +177,8 @@ alias ll='colorls -lh --sd'
 alias ls='colorls --sd'
 alias lsa='colorls -lah --sd'
 
-local isNeon=$(grep -q "KDE neon" /etc/*-release)
-
-if [[ isNeon -eq 0 ]]; then
+if grep -q "KDE neon" /etc/*-release
+then
   alias uos='sudo apt update && sudo pkcon -y update && sudo apt -y autoremove'
 else
   alias uos='sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove'
