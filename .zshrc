@@ -177,6 +177,13 @@ alias ll='colorls -lh --sd'
 alias ls='colorls --sd'
 alias lsa='colorls -lah --sd'
 
-alias uos='sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove'
+local isNeon=$(grep -q "KDE neon" /etc/*-release)
+
+if [[ isNeon ]]; then
+  alias uos='sudo apt update && sudo pkcon -y update && sudo apt -y autoremove'
+else
+  alias uos='sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove'
+fi
+
 alias uzsh='bash ~/.myzsh/update.sh && omz update && src'
 alias pzsh='cd ~/.myzsh && git pull && bash ~/.myzsh/update.sh && omz update && src'
