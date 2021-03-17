@@ -2,6 +2,8 @@
 
 echo "**** Updating ... ****"
 echo "* configs.."
+sudo locale-gen es_AR.UTF-8  
+sudo update-locale LANG=es_AR.UTF-8 
 rsync -ahzc "${HOME}/.myzsh/.p10k.zsh" "${HOME}/" || exit 100
 rsync -ahzc "${HOME}/.myzsh/.zshrc" "${HOME}/" || exit 100
 rsync -ahzc "${HOME}/.myzsh/.nanorc" "${HOME}/" || exit 100
