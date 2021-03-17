@@ -101,7 +101,7 @@ source $(dirname $(gem which colorls))/tab_complete.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+# export LANG=es_AR.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -140,7 +140,17 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 [[ -d ~/sbin ]] && PATH=${PATH}${PATH:+:}~/sbin
 
 export PATH
-export LC_ALL=C
+export LC_ALL="es_AR.UTF-8"
+export LANG="es_AR.UTF-8"
+export LC_NUMERIC="es_AR.UTF-8"
+export LC_TIME="es_AR.UTF-8"
+export LC_MONETARY="es_AR.UTF-8"
+export LC_PAPER="es_AR.UTF-8"
+export LC_IDENTIFICATION="es_AR.UTF-8"
+export LC_NAME="es_AR.UTF-8"
+export LC_ADDRESS="es_AR.UTF-8"
+export LC_TELEPHONE="es_AR.UTF-8"
+export LC_MEASUREMENT="es_AR.UTF-8"
 
 _change_dir() {
   dirtomove=$(ls | fzf)
