@@ -189,9 +189,9 @@ alias lsa='colorls -lah --sd'
 
 if grep -q "KDE neon" /etc/*-release
 then
-  alias uos='sudo pkcon refresh && sudo pkcon -y update'
+  alias uos='sudo apt-mark auto $(apt-mark showmanual | grep -E "^linux-([[:alpha:]]+-)+[[:digit:].]+-[^-]+(|-.+)$"); sudo pkcon refresh && sudo pkcon -y update'
 else
-  alias uos='sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove'
+  alias uos='sudo apt-mark auto $(apt-mark showmanual | grep -E "^linux-([[:alpha:]]+-)+[[:digit:].]+-[^-]+(|-.+)$"); sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove'
 fi
 
 alias uzsh='bash ~/.myzsh/update.sh && omz update && src'
