@@ -6,11 +6,11 @@ My ZSH configurations
 
 If using SSH, and will contribute to the project, install using:
 ```
-git clone git@github.com:francogp/myzsh.git ~/.myzsh && bash ~/.myzsh/install.sh
+mkdir ~/.myzsh && git clone git@github.com:francogp/myzsh.git ~/.myzsh && bash ~/.myzsh/install.sh
 ```
 If just using this scripts, install using:
 ```
-git clone https://github.com/francogp/myzsh.git ~/.myzsh && bash ~/.myzsh/install.sh
+mkdir ~/.myzsh && git clone https://github.com/francogp/myzsh.git ~/.myzsh && bash ~/.myzsh/install.sh
 ```
 # Update all scripts and plugins
 for update zsh with latest LOCAL modifications, use:
