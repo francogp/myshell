@@ -80,7 +80,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
   colored-man-pages
-  zsh_reload
   # ssh-agent
   bgnotify
   rsync
@@ -194,5 +193,5 @@ else
   alias uos='sudo apt-mark auto $(apt-mark showmanual | grep -E "^linux-([[:alpha:]]+-)+[[:digit:].]+-[^-]+(|-.+)$"); sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove'
 fi
 
-alias uzsh='bash ~/.myzsh/update.sh && omz update && src'
-alias pzsh='cd ~/.myzsh && git pull && bash ~/.myzsh/update.sh && omz update && src'
+alias uzsh='bash ~/.myzsh/update.sh && omz update && omz reload'
+alias pzsh='cd ~/.myzsh && git pull && bash ~/.myzsh/update.sh && omz update && omz reload'

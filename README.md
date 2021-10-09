@@ -24,8 +24,8 @@ pzsh
 # Aliases
 ```
 alias uos='sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove'
-alias uzsh='bash ~/.myzsh/update.sh && omz update && src'
-alias pzsh='cd ~/.myzsh && git pull && bash ~/.myzsh/update.sh && omz update && src'
+alias uzsh='bash ~/.myzsh/update.sh && omz update && omz reload'
+alias pzsh='cd ~/.myzsh && git pull && bash ~/.myzsh/update.sh && omz update && omz reload'
 ```
 
 # Marce
@@ -57,6 +57,6 @@ open
 # Aliases
 ```
 alias open='\''xdg-open'\''
-alias uzshm='\''bash ~/.myzsh/update.sh && omz update && bash ~/.myzsh/patch.update.sh && src'\''
-alias pzshm='\''cd ~/.myzsh && git pull && bash ~/.myzsh/update.sh  && bash ~/.myzsh/patch.update.sh && omz update && src'\''
+alias uzshm='\''bash ~/.myzsh/update.sh && omz update && bash ~/.myzsh/patch.update.sh && omz reload'\''
+alias pzshm='\''cd ~/.myzsh && git pull && bash ~/.myzsh/update.sh  && bash ~/.myzsh/patch.update.sh && omz update && omz reload'\''
 ```

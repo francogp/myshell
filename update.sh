@@ -24,5 +24,5 @@ echo "
 **************************
 if you manually run update.sh, RUN THIS COMMANDS!
 
-omz update && src
+omz update && omz reload
 "
