@@ -157,7 +157,7 @@ _change_dir() {
 }
 
 _reverse_search(){
-  local selected_command=$(fc -rl 1 | awk '{$1="";print substr($0,2)}' | fzf)
+  local selected_command=$(fc -rnl 1 | fzf)
   LBUFFER=$selected_command
 }
 
