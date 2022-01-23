@@ -16,7 +16,7 @@ Write-Output "Restart terminal, and execute this script again"
 choco upgrade all -y
 choco install starship --force -y
 
-pwsh.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSScriptRoot\update.ps1`"" -Verb RunAs;
+pwsh.exe -NoProfile -ExecutionPolicy Bypass -File "$PSScriptRoot\update.ps1"
 
 Write-Host '*** CLOSE AND OPEN POWERSHELL AGAIN! ***';
 
