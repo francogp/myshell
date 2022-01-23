@@ -7,7 +7,7 @@ if lsb_release -a | grep -q "18.04"; then
 fi
 
 echo "**** Installing... ****"
-sudo apt update && sudo apt install -y curl git zsh rsync ruby ruby-dev build-essential && sudo gem install rubygems-update && sudo gem update --system && sudo gem install colorls || exit 100
+sudo apt update && sudo apt install -y curl git zsh dnsutils rsync ruby ruby-dev build-essential && sudo gem install rubygems-update && sudo gem update --system && sudo gem install colorls || exit 100
 
 # fix for old ubuntu fzf
 if [ "${OLD_UBUNTU}" = true ]; then
@@ -71,6 +71,6 @@ else
 fi
 
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" || exit 100
-cp ./starship.toml ~/.config/starship.toml || exit 100
+cp ./starship/starship.toml ~/.config/starship.toml || exit 100
 
 echo "**** RESTART TERMINAL! ****"
