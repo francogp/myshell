@@ -38,7 +38,7 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)" || exit 100
 
 echo "**** Updating scripts and dotfiles... ****"
 
-bash "${HOME}/.myzsh/update.sh" || exit 100
+bash "${HOME}/.myshell/update.sh" || exit 100
 
 echo "**** Configuring... ****"
 
@@ -66,11 +66,11 @@ if grep -iq Microsoft /proc/version; then
   echo "**** Configure terminal to use this fonts: 'JetBrainsMono NF' ****"
   echo "**** Configure editors to use this font: 'JetBrainsMono NF' ****"
 else
-  rm -rf "${HOME}/.myzsh/.myCache" &&  mkdir -p "${HOME}/.myzsh/.myCache" && cd "${HOME}/.myzsh/.myCache" || exit 100
+  rm -rf "${HOME}/.myshell/.myCache" &&  mkdir -p "${HOME}/.myshell/.myCache" && cd "${HOME}/.myshell/.myCache" || exit 100
   wget --no-check-certificate --content-disposition "https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Regular/complete/Fira%20Code%20Regular%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf" || exit 100
   wget --no-check-certificate --content-disposition "https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Regular/complete/Fira%20Code%20Regular%20Nerd%20Font%20Complete%20Windows%20Compatible.ttf" || exit 100
   mkdir -p "${HOME}/.local/share/fonts" || exit 100
-  rsync -ahzc "${HOME}/.myzsh/.myCache/" "${HOME}/.local/share/fonts"
+  rsync -ahzc "${HOME}/.myshell/.myCache/" "${HOME}/.local/share/fonts"
   fc-cache -f -v || exit 100
   echo ""
   echo "************************  DONE  **********************************"

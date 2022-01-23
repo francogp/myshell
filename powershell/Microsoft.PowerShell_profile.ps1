@@ -2,13 +2,13 @@ $env:STARSHIP_DISTRO = "";
 $env:IP = (Invoke-WebRequest -uri "http://ifconfig.me/ip").Content;
 
 function updateShell {
-    Set-Location ~/.myzsh && pwsh update.ps1
+    Set-Location ~/.myshell && pwsh update.ps1
 }
 
 Set-Alias -Name ushell -Value updateShell
 
 function pullUpdateShell {
-    Set-Location ~/.myzsh && git pull && pwsh update.ps1
+    Set-Location ~/.myshell && git pull && pwsh update.ps1
 }
 
 Set-Alias -Name pshell -Value pullUpdateShell

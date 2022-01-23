@@ -6,12 +6,12 @@ echo "**** Updating ... ****"
 echo "* configs.."
 sudo locale-gen es_AR.UTF-8  
 sudo update-locale LANG=es_AR.UTF-8 
-rsync -ahzc "${HOME}/.myzsh/zsh/.p10k.zsh" "${HOME}/" || exit 100
-rsync -ahzc "${HOME}/.myzsh/zsh/.zshrc" "${HOME}/" || exit 100
-rsync -ahzc "${HOME}/.myzsh/dotfiles/.nanorc" "${HOME}/" || exit 100
-sudo rsync -ahzc "${HOME}/.myzsh/dotfiles/.nanorc" "/root/" || exit 100
+rsync -ahzc "${HOME}/.myshell/zsh/.p10k.zsh" "${HOME}/" || exit 100
+rsync -ahzc "${HOME}/.myshell/zsh/.zshrc" "${HOME}/" || exit 100
+rsync -ahzc "${HOME}/.myshell/dotfiles/.nanorc" "${HOME}/" || exit 100
+sudo rsync -ahzc "${HOME}/.myshell/dotfiles/.nanorc" "/root/" || exit 100
 mkdir -p "${HOME}/.config/neofetch/" || exit 100
-rsync -ahzc "${HOME}/.myzsh/dotfiles/neofetch.conf" "${HOME}/.config/neofetch/config.conf" || exit 100
+rsync -ahzc "${HOME}/.myshell/dotfiles/neofetch.conf" "${HOME}/.config/neofetch/config.conf" || exit 100
 echo "* powerlevel10k.."
 git -C ${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/themes/powerlevel10k pull || exit 100
 echo "* autosuggestions.."

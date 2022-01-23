@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-bash ~/.myzsh/install.sh
+bash ~/.myshell/install.sh
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -71,5 +71,5 @@ sudo apt install ./slack-desktop-*.deb
 echo "* Slack was successfully installed"
 
 echo "* Executing path update"
-bash "${HOME}/.myzsh/patch.update.sh" || exit 100
+bash "${HOME}/.myshell/patch.update.sh" || exit 100
 echo "ending path update"

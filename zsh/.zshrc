@@ -14,7 +14,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# See https://github.com/ohmyshell/ohmyshell/wiki/Themes
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
@@ -128,7 +128,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# alias ohmyshell="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
@@ -186,8 +186,8 @@ alias ll='colorls -lh --sd'
 alias ls='colorls --sd'
 alias lsa='colorls -lah --sd'
 
-alias ushell='bash ~/.myzsh/update.sh && omz update && omz reload'
-alias pshell='cd ~/.myzsh && git pull && bash ~/.myzsh/update.sh && omz update && omz reload'
+alias ushell='bash ~/.myshell/update.sh && omz update && omz reload'
+alias pshell='cd ~/.myshell && git pull && bash ~/.myshell/update.sh && omz update && omz reload'
 
 # find out which distribution we are running on
 _distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
