@@ -4,7 +4,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 OLD_UBUNTU=false
 if lsb_release -a | grep -q "18.04"; then
-  echo "Old ubuntu detected"
+  echo "*** Old ubuntu detected ***"
   OLD_UBUNTU=true
 fi
 
@@ -43,7 +43,7 @@ bash "${HOME}/.myshell/update.sh" || exit 100
 echo "**** Configuring... ****"
 
 # https://realjenius.com/2020/01/12/kde-neon-snap-apps-missing/
-echo "# /etc/zsh/zprofile: system-wide .zprofile file for zsh(1).                                                                                                       190.11.141.248 
+echo "# /etc/zsh/zprofile: system-wide .zprofile file for zsh(1).                                                                                                     
 #
 # This file is sourced only for login shells (i.e. shells
 # invoked with "-" as the first character of argv[0], and
