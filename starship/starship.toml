@@ -69,6 +69,12 @@ pipestatus_format = '\\[$pipestatus\\] => [$symbol$common_meaning$signal_name$ma
 map_symbol = true
 recognize_signal_code =  true
 pipestatus = true
+symbol = "❌"
+success_symbol = "✅"
+not_executable_symbol = "🚫"
+not_found_symbol = "🔍"
+sigint_symbol = "🧱"
+signal_symbol = "⚡"
 
 [time]
 disabled = false
