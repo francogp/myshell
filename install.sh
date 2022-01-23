@@ -70,4 +70,7 @@ else
   echo "**** Configure editors to use this font: 'JetBrainsMono Nerd Font' ****"
 fi
 
+sh -c "$(curl -fsSL https://starship.rs/install.sh)" || exit 100
+cp ./starship.toml ~/.config/starship.toml || exit 100
+
 echo "**** RESTART TERMINAL! ****"
