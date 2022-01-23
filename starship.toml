@@ -124,6 +124,6 @@ heuristic = false
 
 [sudo]
 style = "bold green"
-symbol = "👩‍💻"
+symbol = "🧙"
 allow_windows = true
 disabled = false
