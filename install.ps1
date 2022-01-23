@@ -23,10 +23,10 @@ else {
 }
 
 New-Item -Path (Split-Path -Path $PROFILE) -type "directory" -Force;
-Copy-Item -Path .\Microsoft.PowerShell_profile.ps1 -Destination $PROFILE -Force
+Copy-Item -Path "$PSScriptRoot\Microsoft.PowerShell_profile.ps1" -Destination $PROFILE -Force
 
 New-Item -Path "$HOME/.config/" -type "directory" -Force;
-Copy-Item -Path .\starship.toml -Destination "$HOME/.config/" -Force
+Copy-Item -Path "$PSScriptRoot\starship.toml" -Destination "$HOME/.config/" -Force
 
 Write-Host 'Press any key to continue...';
 $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
