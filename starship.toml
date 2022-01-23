@@ -7,7 +7,7 @@ add_newline = true
 # command_timeout = 1000
 
 # Change the default prompt format
-format = """[╭╴](bold dimmed green)$env_var[〉](bold dimmed green)$username$hostname[〉](bold dimmed green)$memory_usage[〉](bold dimmed green)$battery
+format = """[╭╴](bold dimmed green)$env_var$username$hostname$memory_usage$battery
 [│](bold dimmed green)$time$shlvl$singularity$kubernetes$vcsh$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$docker_context$package$cmake$cobol$dart$deno$dotnet$elixir$elm$erlang$golang$helm$java$julia$kotlin$lua$nim$nodejs$ocaml$perl$php$pulumi$purescript$python$rlang$red$ruby$rust$scala$swift$terraform$vlang$vagrant$zig$nix_shell$conda$aws$gcloud$openstack$azure$crystal$custom$sudo$cmd_duration$jobs$status$shell$directory
 [╰─](bold dimmed green)$character"""
 
@@ -19,18 +19,18 @@ success_symbol = "[❯](bold green) "
 # Shows an icon that should be included by zshrc script based on the distribution or os
 [env_var.STARSHIP_DISTRO]
 disabled = false
-format = ' [$env_value](bold white)[〉](bold dimmed green)'
+format = '[$env_value](bold white)'
 variable = "STARSHIP_DISTRO"
 
 [env_var.IP]
 disabled = false
-format = "🌎[$env_value](bold white)"
+format = "[〉](bold dimmed green)🌎[$env_value](bold white)"
 variable = "IP"
 
 # Shows the username
 [username]
 disabled = false
-format = "[$user]($style)"
+format = "[〉](bold dimmed green)[$user]($style)"
 show_always = true
 style_root = "bold red"
 style_user = "bold yellow"
@@ -98,7 +98,7 @@ format = ' [\(⏳$duration\)](bold yellow)'
 min_time = 1000
 
 [battery]
-format = "[$symbol$percentage]($style)"
+format = "[〉](bold dimmed green)[$symbol$percentage]($style)"
 disabled = false
 
 [[battery.display]]  
@@ -118,7 +118,7 @@ format = " [🌕$version](bold blue)"
 
 [memory_usage]
 disabled = false
-format = "[🐏$ram_pct ♻️$swap_pct](bold green)"
+format = "[〉](bold dimmed green)[🐏$ram_pct ♻️$swap_pct](bold green)"
 threshold = -1
 symbol = " "
 
