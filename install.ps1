@@ -4,8 +4,8 @@ Write-Output "Installing chocolatey"
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
 Write-Output "Restart terminal, and execute this script again"
-choco upgrade chocolatey
-choco install starship
+choco upgrade chocolatey -y
+choco install starship --force -y
 
 if (!(Test-Path $PROFILE)) {
     Write-Host "Creating config file to support starship on powershell...";
