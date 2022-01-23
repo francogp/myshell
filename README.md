@@ -1,5 +1,5 @@
 # myshell
-My ZSH configurations
+My SHELL configurations
 
 # Franco
 ## Installation 
