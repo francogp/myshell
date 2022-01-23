@@ -49,11 +49,11 @@ truncation_length = 3
 truncation_symbol = "…/"
 
 [shell]
-format = "[〉](bold dimmed green)[$indicator]($style) "
-fish_indicator = ""
-powershell_indicator = "_"
-zsh_indicator = "zsh"
-bash_indicator = "zsh"
+format = "[〉](bold dimmed green)[$indicator]($style)[〉](bold dimmed green)"
+fish_indicator = "fsh"
+powershell_indicator = "psh"
+zsh_indicator = 'zsh'
+bash_indicator = "bsh"
 cmd_indicator = "cmd"
 ion_indicator = "ion"
 tcsh_indicator = "tsh"
@@ -66,7 +66,7 @@ disabled = false
 disabled = false
 format = '[\[$symbol$common_meaning$signal_name$maybe_int\]]($style)'
 map_symbol = true
-recognize_signal_code =  true
+recognize_signal_code = true
 pipestatus = true
 symbol = "❌"
 success_symbol = "✅"
