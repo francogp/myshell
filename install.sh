@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
 OLD_UBUNTU=false
 if lsb_release -a | grep -q "18.04"; then
   echo "Old ubuntu detected"
@@ -71,6 +73,6 @@ else
 fi
 
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" || exit 100
-cp ./starship/starship.toml ~/.config/starship.toml || exit 100
+cp "${SCRIPT_DIR}/starship/starship.toml" "~/.config/starship.toml" || exit 100
 
 echo "**** RESTART TERMINAL! ****"

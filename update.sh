@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
 echo "**** Updating ... ****"
 echo "* configs.."
 sudo locale-gen es_AR.UTF-8  
