@@ -202,6 +202,7 @@ _distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
 # set an icon based on the distro
 case $_distro in
     *kali*)                  ICON="ﴣ";;
+    *neon*)                  ICON="";;
     *arch*)                  ICON="";;
     *debian*)                ICON="";;
     *raspbian*)              ICON="";;
