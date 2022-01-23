@@ -19,7 +19,7 @@ if [ "${OLD_UBUNTU}" = true ]; then
     echo "* fzf not found, trying to install..."
     git clone --depth 1 https://github.com/junegunn/fzf.git "${HOME}/.fzf" || exit 100
   fi
-  "${HOME}"/.fzf/install || exit 100
+  "${HOME}/.fzf/install" || exit 100
 else
   sudo apt install -y fzf bat || exit 100
 fi
