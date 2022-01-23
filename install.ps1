@@ -5,7 +5,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 Write-Output "Restart terminal, and execute this script again"
 choco upgrade chocolatey
-# choco install starchip
+choco install starship
 
 if (!(Test-Path $PROFILE)) {
     Write-Host "Creating config file to support starship on powershell...";
