@@ -134,6 +134,7 @@ style = "green"
 heuristic = false
 
 [sudo]
+format = " [as $symbol]($style)"
 style = "bold green"
 symbol = "🧙"
 allow_windows = true
