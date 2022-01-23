@@ -139,3 +139,6 @@ style = "bold green"
 symbol = "🧙"
 allow_windows = true
 disabled = false
+
+[php]
+format = " via [$symbol($version)]($style)"
