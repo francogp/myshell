@@ -32,6 +32,12 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-
 git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" || exit 100
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" || exit 100
 
+echo "**** installing starship... ****"
+
+sh -c "$(curl -fsSL https://starship.rs/install.sh)" || exit 100
+
+echo "**** Updating scripts and dotfiles... ****"
+
 bash "${HOME}/.myzsh/update.sh" || exit 100
 
 echo "**** Configuring... ****"
@@ -71,8 +77,5 @@ else
   echo "**** Configure terminal to use this fonts: 'JetBrainsMono Nerd Font Mono Regular' ****"
   echo "**** Configure editors to use this font: 'JetBrainsMono Nerd Font' ****"
 fi
-
-sh -c "$(curl -fsSL https://starship.rs/install.sh)" || exit 100
-cp "${SCRIPT_DIR}/starship/starship.toml" "~/.config/starship.toml" || exit 100
 
 echo "**** RESTART TERMINAL! ****"

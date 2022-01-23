@@ -16,11 +16,7 @@ Write-Output "Restart terminal, and execute this script again"
 choco upgrade all -y
 choco install starship --force -y
 
-New-Item -Path (Split-Path -Path $PROFILE) -type "directory" -Force;
-Copy-Item -Path "$PSScriptRoot\Microsoft.PowerShell_profile.ps1" -Destination $PROFILE -Force
-
-New-Item -Path "$HOME/.config/" -type "directory" -Force;
-Copy-Item -Path "$PSScriptRoot\starship.toml" -Destination "$HOME/.config/" -Force
+pwsh.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSScriptRoot\update.ps1`"" -Verb RunAs;
 
 Write-Host '*** CLOSE AND OPEN POWERSHELL AGAIN! ***';
 

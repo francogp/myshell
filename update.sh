@@ -23,7 +23,7 @@ sudo gem update colorls || exit 100
 echo "* zsh.."
 
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" || exit 100
-cp ./starship/starship.toml ~/.config/starship.toml || exit 100
+cp "${SCRIPT_DIR}/starship/starship.toml" "~/.config/starship.toml" || exit 100
 
 echo "
 **************************
