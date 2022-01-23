@@ -107,7 +107,6 @@ style = "bold white"
 disabled = false
 format = "[〉](bold dimmed green)[🐏$ram_pct ♻️$swap_pct](bold green)"
 threshold = -1
-symbol = " "
 
 [package]
 format = " [$symbol$version]($style)"
