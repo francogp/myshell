@@ -64,7 +64,8 @@ disabled = false
 
 [status]
 disabled = false
-format = ' [\[$symbol $common_meaning$signal_name$maybe_int\]]($style)'
+format = '[$symbol$status]($style)'
+pipestatus_format = '\\[$pipestatus\\] => [$symbol$common_meaning$signal_name$maybe_int]($style)'
 map_symbol = true
 recognize_signal_code =  true
 pipestatus = true
@@ -106,7 +107,6 @@ symbol = " "
 [package]
 format = " [$symbol$version]($style)"
 symbol = "📦"
-
 
 [git_branch]
 format = " on [$symbol$branch]($style)"
