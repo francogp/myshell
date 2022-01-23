@@ -186,18 +186,17 @@ alias ll='colorls -lh --sd'
 alias ls='colorls --sd'
 alias lsa='colorls -lah --sd'
 
-if grep -q "KDE neon" /etc/*-release
-then
-  alias uos='sudo apt-mark auto $(apt-mark showmanual | grep -E "^linux-([[:alpha:]]+-)+[[:digit:].]+-[^-]+(|-.+)$"); sudo pkcon refresh && sudo pkcon -y update'
-else
-  alias uos='sudo apt-mark auto $(apt-mark showmanual | grep -E "^linux-([[:alpha:]]+-)+[[:digit:].]+-[^-]+(|-.+)$"); sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove'
-fi
-
-alias uzsh='bash ~/.myzsh/update.sh && omz update && omz reload'
-alias pzsh='cd ~/.myzsh && git pull && bash ~/.myzsh/update.sh && omz update && omz reload'
+alias ushell='bash ~/.myzsh/update.sh && omz update && omz reload'
+alias pshell='cd ~/.myzsh && git pull && bash ~/.myzsh/update.sh && omz update && omz reload'
 
 # find out which distribution we are running on
 _distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
+
+# update alias
+case $_distro in
+    *neon*)   alias uos='sudo apt-mark auto $(apt-mark showmanual | grep -E "^linux-([[:alpha:]]+-)+[[:digit:].]+-[^-]+(|-.+)$"); sudo pkcon refresh && sudo pkcon -y update';;
+    *)        alias uos='sudo apt-mark auto $(apt-mark showmanual | grep -E "^linux-([[:alpha:]]+-)+[[:digit:].]+-[^-]+(|-.+)$"); sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove';;
+esac
 
 # set an icon based on the distro
 case $_distro in

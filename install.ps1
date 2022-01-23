@@ -22,5 +22,7 @@ Copy-Item -Path "$PSScriptRoot\Microsoft.PowerShell_profile.ps1" -Destination $P
 New-Item -Path "$HOME/.config/" -type "directory" -Force;
 Copy-Item -Path "$PSScriptRoot\starship.toml" -Destination "$HOME/.config/" -Force
 
+Write-Host '*** CLOSE AND OPEN POWERSHELL AGAIN! ***';
+
 Write-Host 'Press any key to continue...';
 $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');

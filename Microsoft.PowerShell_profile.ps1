@@ -8,7 +8,7 @@ function updateShell {
 Set-Alias -Name ushell -Value updateShell
 
 function pullUpdateShell {
-    Set-Location ~/.myzsh && git fetch origin && git reset --hard origin/master && git pull && pwsh update.ps1
+    Set-Location ~/.myzsh && git fetch origin && git reset --hard origin/master && pwsh update.ps1
 }
 
 Set-Alias -Name pshell -Value pullUpdateShell
