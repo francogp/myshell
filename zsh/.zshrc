@@ -187,7 +187,7 @@ alias ls='colorls --sd'
 alias lsa='colorls -lah --sd'
 
 alias ushell='bash ~/.myshell/update.sh && omz update && omz reload'
-alias pshell='cd ~/.myshell && git pull && bash ~/.myshell/update.sh && omz update && omz reload'
+alias pshell='cd ~/.myshell && git reset --hard && git pull && bash ~/.myshell/update.sh && omz update && omz reload'
 
 # find out which distribution we are running on
 _distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
