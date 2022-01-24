@@ -12,7 +12,7 @@ sudo locale-gen es_AR.UTF-8
 sudo update-locale LANG=es_AR.UTF-8 
 
 echo "**** Installing... ****"
-sudo apt update && sudo apt install -y curl git zsh dnsutils rsync ruby ruby-dev build-essential && sudo gem install rubygems-update && sudo gem update --system && sudo gem install colorls || exit 100
+sudo apt update && sudo apt install -y curl git zsh dnsutils rsync ruby ruby-dev build-essential fontconfig && sudo gem install rubygems-update && sudo gem update --system && sudo gem install colorls || exit 100
 
 # fix for old ubuntu fzf
 if [ "${OLD_UBUNTU}" = true ]; then
