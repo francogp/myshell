@@ -44,17 +44,23 @@ bash "${HOME}/.myshell/update.sh" || exit 100
 
 echo "**** Configuring... ****"
 
+
+# find out which distribution we are running on
+_distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
+
 # https://realjenius.com/2020/01/12/kde-neon-snap-apps-missing/
-echo "# /etc/zsh/zprofile: system-wide .zprofile file for zsh(1).                                                                                                     
+case $_distro in
+    *neon*)   echo "# /etc/zsh/zprofile: system-wide .zprofile file for zsh(1).                                                                                                     
 #
 # This file is sourced only for login shells (i.e. shells
-# invoked with "-" as the first character of argv[0], and
+# invoked with '-' as the first character of argv[0], and
 # shells invoked with the -l flag.)
 #
 # Global Order: zshenv, zprofile, zshrc, zlogin 
 
 emulate sh -c 'source /etc/profile.d/apps-bin-path.sh'
-" | sudo tee /etc/zsh/zprofile
+" | sudo tee /etc/zsh/zprofile;;
+esac
 
 echo "************************  DONE  **********************************"
 echo "**** Configure terminal to use this fonts: 'JetBrainsMono Nerd Font Mono Regular' ****"
