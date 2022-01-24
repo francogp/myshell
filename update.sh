@@ -34,8 +34,8 @@ sudo cp "${SCRIPT_DIR}/starship/starship.toml" "/root/.config/starship.toml" || 
 
 echo "* fonts.."
 mkdir -p ~/.local/share/fonts && cd ~/.local/share/fonts || exit 100
-curl -fLo "JetBrains Mono Regular Nerd Font Complete Mono.ttf"  https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
-curl -fLo "JetBrains Mono Regular Nerd Font Complete.ttf"  https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete.ttf
+curl -fLo "JetBrains Mono Regular Nerd Font Complete Mono.ttf"  https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf || exit 100
+curl -fLo "JetBrains Mono Regular Nerd Font Complete.ttf"  https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete.ttf || exit 100
 fc-cache -f -v || exit 100
 
 echo "
