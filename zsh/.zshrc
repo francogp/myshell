@@ -229,7 +229,7 @@ export STARSHIP_DISTRO="$ICON"
 export IP="$(dig +short myip.opendns.com @resolver1.opendns.com)"
 
 function set_win_title(){
-  echo -ne "\033]0; $USER@$HOST: $(basename "$PWD")\007"
+  echo -ne "\033]0;$USER@$HOST: $(basename "$PWD")\007"
 }
 precmd_functions+=(set_win_title)
 

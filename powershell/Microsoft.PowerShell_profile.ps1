@@ -14,7 +14,7 @@ function pullUpdateShell {
 Set-Alias -Name pshell -Value pullUpdateShell
 
 function Invoke-Starship-PreCommand {
-    $host.ui.Write("`e]0; PS> $env:USERNAME@$env:COMPUTERNAME`: $pwd `a")
+    $host.ui.Write("`e]0;$env:USERNAME@$env:COMPUTERNAME`: $pwd `a")
 }
 
 Invoke-Expression (&starship init powershell)
