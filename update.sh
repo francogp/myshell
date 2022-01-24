@@ -26,7 +26,7 @@ echo "* zsh.."
 
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" || exit 100
 cp "${SCRIPT_DIR}/starship/starship.toml" "${HOME}/.config/starship.toml" || exit 100
-cp "${SCRIPT_DIR}/starship/starship.toml" "/root/.config/starship.toml" || exit 100
+sudo cp "${SCRIPT_DIR}/starship/starship.toml" "/root/.config/starship.toml" || exit 100
 
 echo "
 **************************
