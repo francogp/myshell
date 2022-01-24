@@ -24,7 +24,7 @@ variable = "STARSHIP_DISTRO"
 
 [env_var.IP]
 disabled = false
-format = "[〉](bold dimmed green)🌎[$env_value](bold white)"
+format = "[  ](dimmed green)🌎[$env_value](bold white)"
 variable = "IP"
 
 # Shows the username
@@ -49,7 +49,7 @@ truncation_length = 3
 truncation_symbol = "…/"
 
 [shell]
-format = "[〉](bold dimmed green)[$indicator]($style)[〉](bold dimmed green)"
+format = "[  ](dimmed green)[$indicator]($style)[  ](dimmed green)"
 fish_indicator = "fsh"
 powershell_indicator = "psh"
 zsh_indicator = 'zsh'
@@ -88,7 +88,7 @@ style = "bold yellow"
 min_time = 1000
 
 [battery]
-format = "[〉](bold dimmed green)[$symbol$percentage]($style)"
+format = "[  ](dimmed green)[$symbol$percentage]($style)"
 disabled = false
 
 [[battery.display]]  
@@ -105,7 +105,7 @@ style = "bold white"
 
 [memory_usage]
 disabled = false
-format = "[〉](bold dimmed green)[🐏$ram_pct ♻️$swap_pct](bold green)"
+format = "[  ](dimmed green)[🐏${ram_pct} 李${swap_pct}](bold green)"
 threshold = -1
 
 [package]
