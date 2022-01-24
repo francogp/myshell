@@ -6,6 +6,7 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 # 2) install nerdfonts!
 
 choco upgrade all -y
+Update-Module
 
 New-Item -Path (Split-Path -Path $PROFILE) -type "directory" -Force;
 Copy-Item -Path "$PSScriptRoot\powershell\Microsoft.PowerShell_profile.ps1" -Destination $PROFILE -Force

@@ -12,7 +12,9 @@ if (!(Test-Path -Path $PROFILE)) {
     New-Item -ItemType File -Path $PROFILE -Force
 }
 
-Write-Output "Restart terminal, and execute this script again"
+Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
+Install-Module -Force -Name PSReadLine -RequiredVersion 2.1.0
+
 choco upgrade all -y
 choco install starship --force -y
 choco install jetbrainsmononf --force -y
