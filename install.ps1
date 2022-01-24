@@ -15,6 +15,7 @@ if (!(Test-Path -Path $PROFILE)) {
 Write-Output "Restart terminal, and execute this script again"
 choco upgrade all -y
 choco install starship --force -y
+choco install jetbrainsmononf --force -y
 
 pwsh.exe -NoProfile -ExecutionPolicy Bypass -File "$PSScriptRoot\update.ps1"
 
