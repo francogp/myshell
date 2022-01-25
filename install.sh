@@ -64,4 +64,7 @@ esac
 
 bash "${HOME}/.myshell/update.sh" || exit 100
 
+echo "************************  DONE  **********************************"
+echo "**** Configure terminal to use this fonts: 'JetBrainsMono Nerd Font Mono Regular' ****"
+echo "**** Configure editors to use this font: 'JetBrainsMono Nerd Font' ****"
 echo "**** RESTART TERMINAL! ****"
