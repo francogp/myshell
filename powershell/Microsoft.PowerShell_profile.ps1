@@ -16,7 +16,7 @@ function getPublicIP {
     Write-Output "$((Invoke-WebRequest -uri "http://ifconfig.me/ip").Content)";
 }
 
-Set-Alias -Name publicip -Value pullUpdateShell
+Set-Alias -Name publicip -Value getPublicIP
 
 function Invoke-Starship-PreCommand {
     $FREE_SPACE = Get-CimInstance -ClassName Win32_LogicalDisk | Where-Object -Property Name -EQ "$((get-location).Drive.Name):" | ForEach-Object { 100 - [math]::Round(($_.FreeSpace * 100) / $_.Size, 0) }
