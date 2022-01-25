@@ -39,7 +39,7 @@ variable = "FREE_SPACE_YELLOW"
 
 [env_var.FREE_SPACE_RED]
 disabled = false
-format = "[  ](dimmed green)💾[${env_value](bold red)"
+format = "[  ](dimmed green)💾[${env_value}](bold red)"
 variable = "FREE_SPACE_RED"
 
 # Shows the username
