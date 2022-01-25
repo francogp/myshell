@@ -13,7 +13,7 @@ function pullUpdateShell {
 Set-Alias -Name pshell -Value pullUpdateShell
 
 function getPublicIP {
-    (Invoke-WebRequest -uri "http://ifconfig.me/ip").Content;
+    Write-Output "$((Invoke-WebRequest -uri "http://ifconfig.me/ip").Content)";
 }
 
 Set-Alias -Name publicip -Value pullUpdateShell
