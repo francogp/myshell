@@ -14,6 +14,16 @@ function pullUpdateShell {
 Set-Alias -Name pshell -Value pullUpdateShell
 
 function Invoke-Starship-PreCommand {
+    $FREE_SPACE = Get-CimInstance -ClassName Win32_LogicalDisk | Where-Object -Property Name -EQ "$((get-location).Drive.Name):" | ForEach-Object { [math]::Round(($_.FreeSpace * 100) / $_.Size, 0) }
+    if ( $FREE_SPACE -gt 10) {
+        $env:FREE_SPACE_GREEN = "$FREE_SPACE%"
+    }
+    elseif ( $FREE_SPACE -gt 5) {
+        $env:FREE_SPACE_YELLOW = "$FREE_SPACE%"
+    }
+    else {
+        $env:FREE_SPACE_RED = "$FREE_SPACE%"
+    }
     $host.ui.Write("`e]0;$env:USERNAME@$env:COMPUTERNAME`: $pwd `a")
 }
 

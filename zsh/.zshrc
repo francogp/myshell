@@ -59,8 +59,6 @@ COMPLETION_WAITING_DOTS="true"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-
-
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # You can set one of the optional three formats:
@@ -156,7 +154,7 @@ _change_dir() {
   cd "$dirtomove"
 }
 
-_reverse_search(){
+_reverse_search() {
   local selected_command=$(fc -rnl 1 | fzf)
   LBUFFER=$selected_command
 }
@@ -175,7 +173,7 @@ alias mysql='nocorrect mysql '
 alias mkdir='nocorrect mkdir '
 alias sudo='nocorrect sudo '
 if [[ -f /usr/bin/batcat ]]; then
-   alias bat='batcat'
+  alias bat='batcat'
 fi
 
 # CUSTOM ALIASES
@@ -194,43 +192,55 @@ _distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
 
 # update alias
 case $_distro in
-    *neon*)   alias uos='sudo apt-mark auto $(apt-mark showmanual | grep -E "^linux-([[:alpha:]]+-)+[[:digit:].]+-[^-]+(|-.+)$"); sudo pkcon refresh && sudo pkcon -y update';;
-    *)        alias uos='sudo apt-mark auto $(apt-mark showmanual | grep -E "^linux-([[:alpha:]]+-)+[[:digit:].]+-[^-]+(|-.+)$"); sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove';;
+*neon*) alias uos='sudo apt-mark auto $(apt-mark showmanual | grep -E "^linux-([[:alpha:]]+-)+[[:digit:].]+-[^-]+(|-.+)$"); sudo pkcon refresh && sudo pkcon -y update' ;;
+*) alias uos='sudo apt-mark auto $(apt-mark showmanual | grep -E "^linux-([[:alpha:]]+-)+[[:digit:].]+-[^-]+(|-.+)$"); sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove' ;;
 esac
 
 # set an icon based on the distro
 case $_distro in
-    *kali*)                  ICON="ﴣ";;
-    *neon*)                  ICON="";;
-    *arch*)                  ICON="";;
-    *debian*)                ICON="";;
-    *raspbian*)              ICON="";;
-    *ubuntu*)                ICON="";;
-    *elementary*)            ICON="";;
-    *fedora*)                ICON="";;
-    *coreos*)                ICON="";;
-    *gentoo*)                ICON="";;
-    *mageia*)                ICON="";;
-    *centos*)                ICON="";;
-    *opensuse*|*tumbleweed*) ICON="";;
-    *sabayon*)               ICON="";;
-    *slackware*)             ICON="";;
-    *linuxmint*)             ICON="";;
-    *alpine*)                ICON="";;
-    *aosc*)                  ICON="";;
-    *nixos*)                 ICON="";;
-    *devuan*)                ICON="";;
-    *manjaro*)               ICON="";;
-    *rhel*)                  ICON="";;
-    *)                       ICON="";;
+*kali*) ICON="ﴣ" ;;
+*neon*) ICON="" ;;
+*arch*) ICON="" ;;
+*debian*) ICON="" ;;
+*raspbian*) ICON="" ;;
+*ubuntu*) ICON="" ;;
+*elementary*) ICON="" ;;
+*fedora*) ICON="" ;;
+*coreos*) ICON="" ;;
+*gentoo*) ICON="" ;;
+*mageia*) ICON="" ;;
+*centos*) ICON="" ;;
+*opensuse* | *tumbleweed*) ICON="" ;;
+*sabayon*) ICON="" ;;
+*slackware*) ICON="" ;;
+*linuxmint*) ICON="" ;;
+*alpine*) ICON="" ;;
+*aosc*) ICON="" ;;
+*nixos*) ICON="" ;;
+*devuan*) ICON="" ;;
+*manjaro*) ICON="" ;;
+*rhel*) ICON="" ;;
+*) ICON="" ;;
 esac
 
 export STARSHIP_DISTRO="$ICON"
 export IP="$(dig +short myip.opendns.com @resolver1.opendns.com)"
 
-function set_win_title(){
+function set_win_title() {
   echo -ne "\033]0;$USER@$HOST: $(basename "$PWD")\007"
 }
 precmd_functions+=(set_win_title)
+
+function free_space() {
+  FREE_SPACE="$(df --output=pcent . | sed 1d | awk '{ print (100 - substr($1, 1, length($1)-1)) }')"
+  if [[ $FREE_SPACE -gt 10 ]]; then
+    export FREE_SPACE_GREEN="$FREE_SPACE%"
+  elif [[ $FREE_SPACE -gt 5 ]]; then
+    export FREE_SPACE_YELLOW="$FREE_SPACE%"
+  else
+    export FREE_SPACE_RED="$FREE_SPACE%"
+  fi
+}
+starship_precmd_user_func="free_space"
 
 eval "$(starship init zsh)"
