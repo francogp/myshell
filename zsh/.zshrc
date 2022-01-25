@@ -241,6 +241,6 @@ function free_space() {
     export FREE_SPACE_RED="$FREE_SPACE%"
   fi
 }
-starship_precmd_user_func="free_space"
+precmd_functions+=(free_space)
 
 eval "$(starship init zsh)"
