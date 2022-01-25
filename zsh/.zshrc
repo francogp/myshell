@@ -91,7 +91,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source $(dirname $(gem which colorls))/tab_complete.sh
-[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+[[ -f "${HOME}/.fzf.zsh" ]] && source "${HOME}/.fzf.zsh"
 
 # User configuration
 
@@ -130,11 +130,11 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-[[ -d ~/.automaticScripts ]] && PATH=${PATH}${PATH:+:}~/.automaticScripts
-[[ -d ~/.local/bin ]] && PATH=${PATH}${PATH:+:}~/.local/bin
-[[ -d ~/.local/sbin ]] && PATH=${PATH}${PATH:+:}~/.local/sbin
-[[ -d ~/bin ]] && PATH=${PATH}${PATH:+:}~/bin
-[[ -d ~/sbin ]] && PATH=${PATH}${PATH:+:}~/sbin
+[[ -d "${HOME}/.automaticScripts" ]] && PATH=${PATH}${PATH:+:}${HOME}/.automaticScripts
+[[ -d "${HOME}/.local/bin" ]] && PATH=${PATH}${PATH:+:}${HOME}/.local/bin
+[[ -d "${HOME}/.local/sbin" ]] && PATH=${PATH}${PATH:+:}${HOME}/.local/sbin
+[[ -d "${HOME}/bin" ]] && PATH=${PATH}${PATH:+:}${HOME}/bin
+[[ -d "${HOME}/sbin" ]] && PATH=${PATH}${PATH:+:}${HOME}/sbin
 
 export PATH
 export LC_ALL="es_AR.UTF-8"
@@ -186,6 +186,7 @@ alias lsa='colorls -lah --sd'
 
 alias ushell='bash ~/.myshell/update.sh && omz update && omz reload'
 alias pshell='cd ~/.myshell && git reset --hard && git pull && bash ~/.myshell/update.sh && omz update && omz reload'
+alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # find out which distribution we are running on
 _distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
@@ -224,7 +225,6 @@ case $_distro in
 esac
 
 export STARSHIP_DISTRO="$ICON"
-export IP="$(dig +short myip.opendns.com @resolver1.opendns.com)"
 
 function set_win_title() {
   echo -ne "\033]0;$USER@$HOST: $(basename "$PWD")\007"
@@ -242,5 +242,7 @@ function free_space() {
   fi
 }
 precmd_functions+=(free_space)
+
+[[ -f "${HOME}/.myshell/mods/zshrc.sh" ]] && source "${HOME}/.myshell/mods/zshrc.sh"
 
 eval "$(starship init zsh)"

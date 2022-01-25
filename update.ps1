@@ -14,5 +14,9 @@ Copy-Item -Path "$PSScriptRoot\powershell\Microsoft.PowerShell_profile.ps1" -Des
 New-Item -Path "$HOME/.config/" -type "directory" -Force;
 Copy-Item -Path "$PSScriptRoot\starship\starship.toml" -Destination "$HOME/.config/" -Force
 
+If (Test-Path -Path "$PSScriptRoot\mods\update.ps1" ) {
+    pwsh.exe -NoProfile -ExecutionPolicy Bypass -File "$PSScriptRoot\mods\update.ps1"
+}
+
 Write-Host 'Press any key to continue...';
 $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 
 OLD_UBUNTU=false
 if lsb_release -a | grep -q "18.04"; then
@@ -8,8 +8,8 @@ if lsb_release -a | grep -q "18.04"; then
   OLD_UBUNTU=true
 fi
 
-sudo locale-gen es_AR.UTF-8  
-sudo update-locale LANG=es_AR.UTF-8 
+sudo locale-gen es_AR.UTF-8
+sudo update-locale LANG=es_AR.UTF-8
 
 echo "**** Installing... ****"
 sudo apt update && sudo apt install -y curl git zsh dnsutils rsync ruby ruby-dev build-essential fontconfig && sudo gem install rubygems-update && sudo gem update --system && sudo gem install colorls || exit 100
@@ -40,17 +40,14 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)" || exit 100
 
 echo "**** Updating scripts and dotfiles... ****"
 
-bash "${HOME}/.myshell/update.sh" || exit 100
-
-echo "**** Configuring... ****"
-
-
 # find out which distribution we are running on
 _distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
 
 # https://realjenius.com/2020/01/12/kde-neon-snap-apps-missing/
 case $_distro in
-    *neon*)   echo "# /etc/zsh/zprofile: system-wide .zprofile file for zsh(1).                                                                                                     
+*neon*)
+  echo "Configuring KDE NEO fixes.."
+  echo "# /etc/zsh/zprofile: system-wide .zprofile file for zsh(1).                                                                                                     
 #
 # This file is sourced only for login shells (i.e. shells
 # invoked with '-' as the first character of argv[0], and
@@ -59,11 +56,12 @@ case $_distro in
 # Global Order: zshenv, zprofile, zshrc, zlogin 
 
 emulate sh -c 'source /etc/profile.d/apps-bin-path.sh'
-" | sudo tee /etc/zsh/zprofile;;
+" | sudo tee /etc/zsh/zprofile
+  ;;
 esac
 
-echo "************************  DONE  **********************************"
-echo "**** Configure terminal to use this fonts: 'JetBrainsMono Nerd Font Mono Regular' ****"
-echo "**** Configure editors to use this font: 'JetBrainsMono Nerd Font' ****"
+[[ -f "${HOME}/.myshell/mods/install.sh" ]] && source "${HOME}/.myshell/mods/install.sh"
+
+bash "${HOME}/.myshell/update.sh" || exit 100
 
 echo "**** RESTART TERMINAL! ****"

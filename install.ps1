@@ -19,6 +19,10 @@ choco upgrade all -y
 choco install starship --force -y
 choco install jetbrainsmononf --force -y
 
+If (Test-Path -Path "$PSScriptRoot\mods\install.ps1" ) {
+    pwsh.exe -NoProfile -ExecutionPolicy Bypass -File "$PSScriptRoot\mods\install.ps1"
+}
+
 pwsh.exe -NoProfile -ExecutionPolicy Bypass -File "$PSScriptRoot\update.ps1"
 
 Write-Host '*** CLOSE AND OPEN POWERSHELL AGAIN! ***';

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 
 echo "**** Updating ... ****"
 
@@ -34,19 +34,15 @@ sudo cp "${SCRIPT_DIR}/starship/starship.toml" "/root/.config/starship.toml" || 
 
 echo "* fonts.."
 mkdir -p ~/.local/share/fonts && cd ~/.local/share/fonts || exit 100
-curl -fLo "JetBrains Mono Regular Nerd Font Complete Mono.ttf"  https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf || exit 100
-curl -fLo "JetBrains Mono Regular Nerd Font Complete.ttf"  https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete.ttf || exit 100
+curl -fLo "JetBrains Mono Regular Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf || exit 100
+curl -fLo "JetBrains Mono Regular Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete.ttf || exit 100
 fc-cache -f -v || exit 100
+
+[[ -f "${HOME}/.myshell/mods/update.sh" ]] && source "${HOME}/.myshell/mods/update.sh"
 
 echo "
 **************************
 if you manually run update.sh, RUN THIS COMMANDS!
-
-    omz update && omz reload    
-
+omz update && omz reload    
 **************************
 "
-
-echo "**** On windows, install fonts from:  https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/Regular/complete/ ****"
-echo "**** Configure terminal to use this fonts: 'JetBrainsMono Nerd Font Mono Regular' ****"
-echo "**** Configure editors to use this font: 'JetBrainsMono Nerd Font' ****"

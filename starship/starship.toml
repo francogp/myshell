@@ -7,7 +7,7 @@ add_newline = true
 command_timeout = 60000
 
 # Change the default prompt format
-format = """[╭╴](bold dimmed green) $env_var$memory_usage$battery$shell$username$hostname
+format = """[╭╴](bold dimmed green) $env_var$memory_usage$battery$username$hostname
 [│](bold dimmed green)$time$shlvl$singularity$kubernetes$vcsh$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$docker_context$package$cmake$cobol$dart$deno$dotnet$elixir$elm$erlang$golang$helm$java$julia$kotlin$lua$nim$nodejs$ocaml$perl$php$pulumi$purescript$python$rlang$red$ruby$rust$scala$swift$terraform$vlang$vagrant$zig$nix_shell$conda$aws$gcloud$openstack$azure$crystal$custom$sudo$cmd_duration$jobs$directory
 [╰─](bold dimmed green)$status$character"""
 
@@ -21,11 +21,6 @@ success_symbol = "[❯](bold green) "
 disabled = false
 format = '[$env_value](bold white)'
 variable = "STARSHIP_DISTRO"
-
-[env_var.IP]
-disabled = false
-format = "[  ](dimmed green)🌎[${env_value}](bold white)"
-variable = "IP"
 
 [env_var.FREE_SPACE_GREEN]
 disabled = false
@@ -104,7 +99,7 @@ style = "bold yellow"
 min_time = 1000
 
 [battery]
-format = "[  ](dimmed green)[$symbol$percentage]($style)"
+format = " [$symbol$percentage]($style)"
 disabled = false
 
 [[battery.display]]  

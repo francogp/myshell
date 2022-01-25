@@ -1,5 +1,4 @@
 $env:STARSHIP_DISTRO = "";
-$env:IP = (Invoke-WebRequest -uri "http://ifconfig.me/ip").Content;
 
 function updateShell {
     Set-Location ~/.myshell && pwsh update.ps1
@@ -12,6 +11,12 @@ function pullUpdateShell {
 }
 
 Set-Alias -Name pshell -Value pullUpdateShell
+
+function getPublicIP {
+    (Invoke-WebRequest -uri "http://ifconfig.me/ip").Content;
+}
+
+Set-Alias -Name publicip -Value pullUpdateShell
 
 function Invoke-Starship-PreCommand {
     $FREE_SPACE = Get-CimInstance -ClassName Win32_LogicalDisk | Where-Object -Property Name -EQ "$((get-location).Drive.Name):" | ForEach-Object { 100 - [math]::Round(($_.FreeSpace * 100) / $_.Size, 0) }
@@ -29,5 +34,9 @@ function Invoke-Starship-PreCommand {
 
 Import-Module PSReadLine
 Set-PSReadLineOption -PredictionSource History
+
+If (Test-Path -Path "${HOME}\.myshell\mods\Microsoft.PowerShell_profile.ps1" ) {
+    . "${HOME}\.myshell\mods\Microsoft.PowerShell_profile.ps1"
+}
 
 Invoke-Expression (&starship init powershell)
