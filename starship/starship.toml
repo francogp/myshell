@@ -39,13 +39,13 @@ variable = "FREE_SPACE_YELLOW"
 
 [env_var.FREE_SPACE_RED]
 disabled = false
-format = "[  ](dimmed green)💾[${env_value}](bold red)"
+format = "[  ](dimmed green)💾[${env_value](bold red)"
 variable = "FREE_SPACE_RED"
 
 # Shows the username
 [username]
 disabled = false
-format = "[$user]($style)"
+format = "[  ](dimmed green)[$user]($style)"
 show_always = true
 style_root = "bold red"
 style_user = "bold yellow"
@@ -65,7 +65,7 @@ truncation_length = 3
 truncation_symbol = "…/"
 
 [shell]
-format = "[  ](dimmed green)[$indicator]($style)[  ](dimmed green)"
+format = "[  ](dimmed green)[$indicator]($style)"
 fish_indicator = "fsh"
 powershell_indicator = "psh"
 zsh_indicator = 'zsh'
@@ -76,7 +76,7 @@ tcsh_indicator = "tsh"
 xonsh_indicator = "xsh"
 nu_indicator = "nu"
 unknown_indicator = "mystery shell"
-disabled = false
+disabled = true
 
 [status]
 disabled = false
