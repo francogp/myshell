@@ -232,13 +232,13 @@ function set_win_title() {
 precmd_functions+=(set_win_title)
 
 function free_space() {
-  FREE_SPACE="$(df --output=pcent . | sed 1d | awk '{ print (100 - substr($1, 1, length($1)-1)) }')"
-  if [[ $FREE_SPACE -gt 10 ]]; then
-    export FREE_SPACE_GREEN="$FREE_SPACE%"
-  elif [[ $FREE_SPACE -gt 5 ]]; then
-    export FREE_SPACE_YELLOW="$FREE_SPACE%"
+  FREE_SPACE="$(df --output=pcent . | sed 1d)"
+  if [[ $FREE_SPACE -gt 95 ]]; then
+    export FREE_SPACE_RED="$FREE_SPACE"
+  elif [[ $FREE_SPACE -gt 90 ]]; then
+    export FREE_SPACE_YELLOW="$FREE_SPACE"
   else
-    export FREE_SPACE_RED="$FREE_SPACE%"
+    export FREE_SPACE_GREEN="$FREE_SPACE"
   fi
 }
 precmd_functions+=(free_space)
