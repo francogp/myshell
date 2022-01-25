@@ -39,6 +39,7 @@ style_user = "bold yellow"
 disabled = false
 format = "[@$hostname](bold yellow)"
 ssh_only = false
+trim_at = ""
 
 [directory]
 format = " at [$path]($style)[$read_only]($read_only_style)"
@@ -135,12 +136,12 @@ format = '([\[$all_status$ahead_behind\]]($style))'
 
 [git_state]
 format = ' [($state( $progress_current of $progress_total))]($style)'
-cherry_pick = " [🍒 PICKING](bold red)"
+cherry_pick = " [🍒PICKING](bold red)"
 
 [git_commit]
 format = " [\\($hash$tag\\)]($style)"
 commit_hash_length = 4
-tag_symbol = "🔖 "
+tag_symbol = "🔖"
 
 [git_metrics]
 added_style = "bold blue"
@@ -167,7 +168,7 @@ symbol = "☕"
 
 [dotnet]
 format = " via [$symbol]($style)"
-symbol = ""
+symbol = "🥅"
 heuristic = false
 
 [python]
