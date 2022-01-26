@@ -12,6 +12,12 @@ function pullUpdateShell {
 
 Set-Alias -Name pshell -Value pullUpdateShell
 
+function reinstallShell {
+    Set-Location ~/.myshell && git reset --hard && git pull && pwsh install.ps1
+}
+
+Set-Alias -Name rshell -Value reinstallShell
+
 function getPublicIP {
     Write-Output "$((Invoke-WebRequest -uri "http://ifconfig.me/ip").Content)";
 }
