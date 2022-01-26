@@ -18,6 +18,7 @@ mkdir -p "${HOME}/.myshell/mods/"
 
 echo "export LC_ALL=\"${language}\"
 export LANG=\"${language}\"
+export LANGUAGE=\"${language}\"
 export LC_NUMERIC=\"${language}\"
 export LC_TIME=\"${language}\"
 export LC_MONETARY=\"${language}\"
