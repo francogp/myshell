@@ -175,6 +175,7 @@ alias ll='colorls -lh --sd'
 alias ls='colorls --sd'
 alias lsa='colorls -lah --sd'
 
+alias rshell='cd ~/.myshell/ && git reset --hard && git pull && bash install.sh'
 alias ushell='bash ~/.myshell/update.sh && omz update && omz reload'
 alias pshell='cd ~/.myshell && git reset --hard && git pull && bash ~/.myshell/update.sh && omz update && omz reload'
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'

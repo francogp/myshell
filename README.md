@@ -34,8 +34,9 @@ pshell
 ## Aliases
 ```
 uos = update OS
+rshell = reinstall all from scratch
 ushell = update shell configs
-pshell = pull changes and update configs
+pshell = pull changes and update shell configs
 publicip = show public ip address
 ```
 ## Mods
