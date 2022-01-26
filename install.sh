@@ -30,7 +30,7 @@ export LC_TELEPHONE=\"${language}\"
 export LC_MEASUREMENT=\"${language}\"" >"${HOME}/.myshell/mods/language.sh" || exit 100
 
 echo "**** Installing... ****"
-sudo apt update && sudo apt install -y curl git zsh dnsutils rsync ruby ruby-dev build-essential fontconfig && sudo gem install rubygems-update && sudo gem update --system && sudo gem install colorls || exit 100
+sudo apt update && sudo apt install -y curl git zsh dnsutils rsync ruby ruby-dev build-essential fontconfig && sudo gem install rubygems-update && sudo gem update && sudo gem install colorls || exit 100
 
 # fix for old ubuntu fzf
 if [ "${OLD_UBUNTU}" = true ]; then
