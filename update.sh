@@ -40,6 +40,9 @@ fc-cache -f -v || exit 100
 
 [[ -f "${HOME}/.myshell/mods/update.sh" ]] && source "${HOME}/.myshell/mods/update.sh"
 
+echo "***** CLEANUP ******"
+sudo gem cleanup || exit 100
+
 echo "
 **************************
 if you manually run update.sh, RUN THIS COMMANDS!
