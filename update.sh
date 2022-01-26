@@ -18,11 +18,11 @@ sudo rsync -ahzc "${HOME}/.myshell/dotfiles/neofetch.conf" "/root/.config/neofet
 
 echo "* autosuggestions.."
 git -C ${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-autosuggestions pull || exit 100
-sudo git -C ${ZSH_CUSTOM:-/root/.oh-my-zsh/custom}/plugins/zsh-autosuggestions pull
+[[ -d "/root/.oh-my-zsh/custom/plugins/zsh-autosuggestions" ]] && sudo git -C ${ZSH_CUSTOM:-/root/.oh-my-zsh/custom}/plugins/zsh-autosuggestions pull
 
 echo "* highlighting.."
 git -C ${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting pull || exit 100
-sudo git -C ${ZSH_CUSTOM:-/root/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting pull
+[[ -d "/root/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]] && sudo git -C ${ZSH_CUSTOM:-/root/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting pull
 
 echo "* colorsls.."
 sudo gem update || exit 100
