@@ -25,7 +25,7 @@ git -C ${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting 
 sudo git -C ${ZSH_CUSTOM:-/root/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting pull
 
 echo "* colorsls.."
-sudo gem update colorls || exit 100
+sudo gem update || exit 100
 
 echo "* starship.."
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" || exit 100
