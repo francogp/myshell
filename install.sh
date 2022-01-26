@@ -8,8 +8,25 @@ if lsb_release -a | grep -q "18.04"; then
   OLD_UBUNTU=true
 fi
 
-sudo locale-gen es_AR.UTF-8
-sudo update-locale LANG=es_AR.UTF-8
+echo "Enter the terminal language (es_AR.UTF-8, en_US.UTF-8, etc ): "
+read language
+
+sudo locale-gen ${language}
+sudo update-locale LANG=${language}
+
+mkdir -p "${HOME}/.myshell/mods/"
+
+echo "export LC_ALL=\"${language}\"
+export LANG=\"${language}\"
+export LC_NUMERIC=\"${language}\"
+export LC_TIME=\"${language}\"
+export LC_MONETARY=\"${language}\"
+export LC_PAPER=\"${language}\"
+export LC_IDENTIFICATION=\"${language}\"
+export LC_NAME=\"${language}\"
+export LC_ADDRESS=\"${language}\"
+export LC_TELEPHONE=\"${language}\"
+export LC_MEASUREMENT=\"${language}\"" >"${HOME}/.myshell/mods/language.sh" || exit 100
 
 echo "**** Installing... ****"
 sudo apt update && sudo apt install -y curl git zsh dnsutils rsync ruby ruby-dev build-essential fontconfig && sudo gem install rubygems-update && sudo gem update --system && sudo gem install colorls || exit 100

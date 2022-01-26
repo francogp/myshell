@@ -137,17 +137,8 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 [[ -d "${HOME}/sbin" ]] && PATH=${PATH}${PATH:+:}${HOME}/sbin
 
 export PATH
-export LC_ALL="es_AR.UTF-8"
-export LANG="es_AR.UTF-8"
-export LC_NUMERIC="es_AR.UTF-8"
-export LC_TIME="es_AR.UTF-8"
-export LC_MONETARY="es_AR.UTF-8"
-export LC_PAPER="es_AR.UTF-8"
-export LC_IDENTIFICATION="es_AR.UTF-8"
-export LC_NAME="es_AR.UTF-8"
-export LC_ADDRESS="es_AR.UTF-8"
-export LC_TELEPHONE="es_AR.UTF-8"
-export LC_MEASUREMENT="es_AR.UTF-8"
+
+[[ -f "${HOME}/.myshell/mods/language.sh" ]] && source "${HOME}/.myshell/mods/language.sh"
 
 _change_dir() {
   dirtomove=$(ls | fzf)
