@@ -2,9 +2,6 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
     Start-Process pwsh.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit 
 }
 
-# 1) INSTALL powershell from microsoft store!
-# 2) install nerdfonts!
-
 Write-Output "Installing chocolatey"
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
@@ -18,6 +15,7 @@ Install-Module -Force -Name PSReadLine -RequiredVersion 2.1.0
 choco upgrade all -y
 choco install starship --force -y
 choco install jetbrainsmononf --force -y
+choco install nano --force -y
 
 If (Test-Path -Path "$PSScriptRoot\mods\install.ps1" ) {
     pwsh.exe -NoProfile -ExecutionPolicy Bypass -File "$PSScriptRoot\mods\install.ps1"

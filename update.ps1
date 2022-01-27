@@ -14,6 +14,8 @@ Copy-Item -Path "$PSScriptRoot\powershell\Microsoft.PowerShell_profile.ps1" -Des
 New-Item -Path "$HOME/.config/" -type "directory" -Force;
 Copy-Item -Path "$PSScriptRoot\starship\starship.toml" -Destination "$HOME/.config/" -Force
 
+Copy-Item -Path "$PSScriptRoot\dotfiles\.nanorc" -Destination "$HOME/nano.rc" -Force
+
 If (Test-Path -Path "$PSScriptRoot\mods\update.ps1" ) {
     pwsh.exe -NoProfile -ExecutionPolicy Bypass -File "$PSScriptRoot\mods\update.ps1"
 }
