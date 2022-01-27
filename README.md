@@ -1,7 +1,6 @@
 # myshell
 My SHELL configurations
 
-# Franco
 ## Installation 
 
 ### PowrShell
