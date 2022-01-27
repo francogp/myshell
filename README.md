@@ -21,20 +21,11 @@ If just using this scripts, install using:
 ```
 mkdir ~/.myshell && git clone https://github.com/francogp/myshell.git ~/.myshell && bash ~/.myshell/install.sh
 ```
-## Update all scripts and plugins
-for update zsh with latest LOCAL modifications, use:
-```
-ushell
-```
-To update all repositories and update local configs, you can use:
-```
-pshell
-```
 ## Aliases
 ```
 uos = update OS
 rshell = reinstall all from scratch
-ushell = update shell configs
+ushell = update shell configs using LOCAL modifications
 pshell = pull changes and update shell configs
 publicip = show public ip address
 ```
