@@ -167,7 +167,7 @@ if [[ -f /usr/bin/batcat ]]; then
 fi
 
 # CUSTOM ALIASES
-architecture="$(dpkg --print-architecture)"
+architecture=$(dpkg --print-architecture)
 case $architecture in
     armhf) ;;
     *)     alias ls='lsd' ;;
