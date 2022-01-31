@@ -35,7 +35,11 @@ sudo apt update && sudo apt install -y curl git zsh dnsutils rsync build-essenti
 # sudo gem uninstall -aIx && sudo apt purge ruby ruby-dev libffi-dev libssl-dev libreadline-dev
 
 # install icons for ls
-sudo bash "${HOME}/.myshell/github/dpkg-github.sh" -a "$(dpkg --print-architecture)" -i Peltoche/lsd
+architecture="$(dpkg --print-architecture)"
+case $architecture in
+    armhf) ;;
+    *)     sudo bash "${HOME}/.myshell/github/dpkg-github.sh" -a "$(dpkg --print-architecture)" -i Peltoche/lsd ;;
+esac
 
 # fix for old ubuntu fzf
 if [ "${OLD_UBUNTU}" = true ]; then
