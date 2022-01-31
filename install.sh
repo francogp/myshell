@@ -30,13 +30,17 @@ export LC_TELEPHONE=\"${language}\"
 export LC_MEASUREMENT=\"${language}\"" >"${HOME}/.myshell/mods/language.sh" || exit 100
 
 echo "**** Installing... ****"
-sudo apt update && sudo apt install -y curl git zsh dnsutils rsync ruby ruby-dev build-essential fontconfig libreadline-dev openssl libffi-dev libssl-dev cmake || exit 100
-sudo gem install rubygems-update && sudo gem update && sudo gem install colorls || exit 100
+sudo apt update && sudo apt install -y curl git zsh dnsutils rsync build-essential fontconfig || exit 100
+
+# sudo gem uninstall -aIx && sudo apt purge ruby ruby-dev libffi-dev libssl-dev libreadline-dev
+
+# install icons for ls
+sudo bash "${HOME}/.myshell/github/dpkg-github.sh" -a "$(dpkg --print-architecture)" -i Peltoche/lsd
 
 # fix for old ubuntu fzf
 if [ "${OLD_UBUNTU}" = true ]; then
   echo "* Applying old ubuntu patches"
-  sudo gem update --system 3.0.6 && sudo gem install colorls && sudo gem pristine rake || exit 100
+  # sudo gem update --system 3.0.6 && sudo gem install colorls && sudo gem pristine rake || exit 100
   if [ ! -d "${HOME}/.fzf" ]; then
     echo "* fzf not found, trying to install..."
     git clone --depth 1 https://github.com/junegunn/fzf.git "${HOME}/.fzf" || exit 100
