@@ -9,13 +9,16 @@ if (!(Test-Path -Path $PROFILE)) {
     New-Item -ItemType File -Path $PROFILE -Force
 }
 
-Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
-Install-Module -Force -Name PSReadLine -RequiredVersion 2.1.0
-
 choco upgrade all -y
 choco install starship --force -y
 choco install jetbrainsmononf --force -y
 choco install nano --force -y
+choco install fzf --force -y
+
+Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
+Install-Module -Name PSReadLine -Force -AllowPrerelease -SkipPublisherCheck
+Install-Module -Name Terminal-Icons -Repository PSGallery -Force
+Install-Module -Name PSFzf -scope CurrentUser -Force
 
 If (Test-Path -Path "$PSScriptRoot\mods\install.ps1" ) {
     pwsh.exe -NoProfile -ExecutionPolicy Bypass -File "$PSScriptRoot\mods\install.ps1"

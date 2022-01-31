@@ -39,7 +39,10 @@ function Invoke-Starship-PreCommand {
 }
 
 Import-Module PSReadLine
+Import-Module Terminal-Icons
 Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionViewStyle ListView
+Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory 'Ctrl+r'
 
 If (Test-Path -Path "${HOME}\.myshell\mods\Microsoft.PowerShell_profile.ps1" ) {
     . "${HOME}\.myshell\mods\Microsoft.PowerShell_profile.ps1"
