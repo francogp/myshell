@@ -24,8 +24,8 @@ echo "* highlighting.."
 git -C ${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting pull || exit 100
 [[ -d "/root/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]] && sudo git -C ${ZSH_CUSTOM:-/root/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting pull
 
-echo "* colorsls.."
-sudo gem update || exit 100
+# update icons for ls
+sudo bash "${HOME}/.myshell/github/dpkg-github.sh" -a "$(dpkg --print-architecture)" -i Peltoche/lsd
 
 echo "* starship.."
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" || exit 100

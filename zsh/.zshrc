@@ -168,12 +168,10 @@ if [[ -f /usr/bin/batcat ]]; then
 fi
 
 # CUSTOM ALIASES
-alias l='colorls -lah --sd'
-alias la='colorls -lAh --sd'
-alias lc='colorls -lAh --sd'
-alias ll='colorls -lh --sd'
-alias ls='colorls --sd'
-alias lsa='colorls -lah --sd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
 
 alias rshell='cd ~/.myshell && git reset --hard && git pull && bash ~/.myshell/install.sh'
 alias ushell='bash ~/.myshell/update.sh && omz update && omz reload'
