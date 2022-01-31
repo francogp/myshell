@@ -32,10 +32,13 @@ export LC_MEASUREMENT=\"${language}\"" >"${HOME}/.myshell/mods/language.sh" || e
 echo "**** Installing... ****"
 sudo apt update && sudo apt install -y curl git zsh dnsutils rsync build-essential fontconfig || exit 100
 
-# sudo gem uninstall -aIx && sudo apt purge ruby ruby-dev libffi-dev libssl-dev libreadline-dev
+# sudo gem uninstall -aIx;
+# sudo gem uninstall -i /usr/share/rubygems-integration/all minitest;
+# sudo apt purge ruby ruby-dev libffi-dev libssl-dev libreadline-dev;
+
 
 # install icons for ls
-architecture="$(dpkg --print-architecture)"
+architecture=$(dpkg --print-architecture)
 case $architecture in
     armhf) ;;
     *)     sudo bash "${HOME}/.myshell/github/dpkg-github.sh" -a "$(dpkg --print-architecture)" -i Peltoche/lsd ;;
