@@ -25,7 +25,11 @@ git -C ${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting 
 [[ -d "/root/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]] && sudo git -C ${ZSH_CUSTOM:-/root/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting pull
 
 # update icons for ls
-sudo bash "${HOME}/.myshell/github/dpkg-github.sh" -a "$(dpkg --print-architecture)" -i Peltoche/lsd
+architecture=$(dpkg --print-architecture)
+case $architecture in
+    armhf) echo "ARM detecterd, ignoring some configs" ;;
+    *)     sudo bash "${HOME}/.myshell/github/dpkg-github.sh" -a "$(dpkg --print-architecture)" -i Peltoche/lsd
+esac
 
 echo "* starship.."
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" || exit 100
