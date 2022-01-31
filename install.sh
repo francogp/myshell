@@ -40,7 +40,7 @@ sudo apt update && sudo apt install -y curl git zsh dnsutils rsync build-essenti
 # install icons for ls
 architecture=$(dpkg --print-architecture)
 case $architecture in
-    armhf) ;;
+    armhf) echo "ARM detecterd, ignoring some configs" ;;
     *)     sudo bash "${HOME}/.myshell/github/dpkg-github.sh" -a "$(dpkg --print-architecture)" -i Peltoche/lsd ;;
 esac
 
