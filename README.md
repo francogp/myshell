@@ -3,7 +3,7 @@ My SHELL configurations
 
 ## Installation 
 
-### PowrShell
+### PowrShell v7+
 If using SSH, and will contribute to the project, install using:
 ```
 cd ~ && mkdir ~/.myshell && git clone git@github.com:francogp/myshell.git .myshell && pwsh .myshell/install.ps1
