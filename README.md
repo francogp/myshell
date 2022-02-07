@@ -14,11 +14,14 @@ cd ~ && mkdir ~/.myshell && git clone https://github.com/francogp/myshell.git .m
 ```
 ### BASH
 If using SSH, and will contribute to the project, install using:
+
 ```
+winget install Git.Git
 mkdir ~/.myshell && git clone git@github.com:francogp/myshell.git ~/.myshell && bash ~/.myshell/install.sh
 ```
 If just using this scripts, install using:
 ```
+winget install Git.Git
 mkdir ~/.myshell && git clone https://github.com/francogp/myshell.git ~/.myshell && bash ~/.myshell/install.sh
 ```
 ## Aliases
