@@ -36,12 +36,11 @@ sudo apt update && sudo apt install -y curl git zsh dnsutils rsync build-essenti
 # sudo gem uninstall -i /usr/share/rubygems-integration/all minitest;
 # sudo apt purge ruby ruby-dev libffi-dev libssl-dev libreadline-dev;
 
-
 # install icons for ls
 architecture=$(dpkg --print-architecture)
 case $architecture in
-    armhf) echo "ARM detecterd, ignoring some configs" ;;
-    *)     sudo bash "${HOME}/.myshell/github/dpkg-github.sh" -a "$(dpkg --print-architecture)" -i Peltoche/lsd ;;
+armhf) echo "ARM detecterd, ignoring some configs" ;;
+*) sudo bash "${HOME}/.myshell/github/dpkg-github.sh" -a "$(dpkg --print-architecture)" -i Peltoche/lsd ;;
 esac
 
 # fix for old ubuntu fzf
@@ -85,6 +84,7 @@ case $_distro in
 #
 # Global Order: zshenv, zprofile, zshrc, zlogin 
 
+emulate sh -c 'source /etc/profile'
 emulate sh -c 'source /etc/profile.d/apps-bin-path.sh'
 " | sudo tee /etc/zsh/zprofile
   ;;
