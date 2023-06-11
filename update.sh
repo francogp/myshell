@@ -27,8 +27,8 @@ git -C ${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting 
 # update icons for ls
 architecture=$(dpkg --print-architecture)
 case $architecture in
-    armhf) echo "ARM detecterd, ignoring some configs" ;;
-    *)     sudo bash "${HOME}/.myshell/github/dpkg-github.sh" -a "$(dpkg --print-architecture)" -i Peltoche/lsd
+armhf) echo "ARM detecterd, ignoring some configs" ;;
+*) sudo bash "${HOME}/.myshell/github/dpkg-github.sh" -a "$(dpkg --print-architecture)" -i Peltoche/lsd ;;
 esac
 
 echo "* starship.."
@@ -38,8 +38,9 @@ sudo cp "${SCRIPT_DIR}/starship/starship.toml" "/root/.config/starship.toml" || 
 
 echo "* fonts.."
 mkdir -p ~/.local/share/fonts && cd ~/.local/share/fonts || exit 100
-curl -fLo "JetBrains Mono Regular Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf || exit 100
-curl -fLo "JetBrains Mono Regular Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete.ttf || exit 100
+curl -fLo "JetBrains Mono Regular Nerd Font Mono.ttf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/Regular/JetBrainsMonoNerdFont-Regular.ttf || exit 100
+curl -fLo "JetBrains Mono Regular Nerd Font Mono Regular.ttf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/Regular/JetBrainsMonoNerdFontMono-Regular.ttf || exit 100
+curl -fLo "JetBrains Mono Regular Nerd Font Mono Propo Regular.ttf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/Regular/JetBrainsMonoNerdFontPropo-Regular.ttf || exit 100
 fc-cache -f -v || exit 100
 
 [[ -f "${HOME}/.myshell/mods/update.sh" ]] && source "${HOME}/.myshell/mods/update.sh"
