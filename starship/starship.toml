@@ -100,6 +100,7 @@ min_time = 1000
 
 [battery]
 format = " [$symbol$percentage]($style)"
+symbol = "🔋"
 disabled = false
 
 [[battery.display]]  
