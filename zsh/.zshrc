@@ -88,7 +88,7 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-# zstyle :omz:plugins:ssh-agent identities id_rsa
+zstyle ':omz:plugins:nvm' lazy yes
 
 source $ZSH/oh-my-zsh.sh
 [[ -f "${HOME}/.fzf.zsh" ]] && source "${HOME}/.fzf.zsh"
