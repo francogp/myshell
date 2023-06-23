@@ -169,8 +169,8 @@ fi
 # CUSTOM ALIASES
 architecture=$(dpkg --print-architecture)
 case $architecture in
-    armhf) echo "ARM detecterd, ignoring some configs" ;;
-    *)     alias ls='lsd' ;;
+armhf) echo "ARM detecterd, ignoring some configs" ;;
+*) alias ls='lsd' ;;
 esac
 
 alias l='ls -l'
@@ -239,5 +239,9 @@ function free_space() {
 precmd_functions+=(free_space)
 
 [[ -f "${HOME}/.myshell/mods/zshrc.sh" ]] && source "${HOME}/.myshell/mods/zshrc.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 eval "$(starship init zsh)"
