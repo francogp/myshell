@@ -86,12 +86,12 @@ plugins=(
   zsh-interactive-cd
   zsh-autosuggestions
   zsh-syntax-highlighting
-  zsh-autocomplete
+  #zsh-autocomplete
 )
 
 zstyle ':omz:plugins:nvm' lazy yes
-zstyle ':autocomplete:*' default-context history-incremental-search-backward
-zstyle ':autocomplete:history-incremental-search-backward:*' min-input 1
+#zstyle ':autocomplete:*' default-context history-incremental-search-backward
+#zstyle ':autocomplete:history-incremental-search-backward:*' min-input 1
 
 source $ZSH/oh-my-zsh.sh
 [[ -f "${HOME}/.fzf.zsh" ]] && source "${HOME}/.fzf.zsh"
