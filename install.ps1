@@ -11,7 +11,7 @@ if (!(Test-Path -Path $PROFILE)) {
 
 choco upgrade all -y
 choco install starship --force -y
-choco install jetbrainsmonon --force -y
+choco install nerd-fonts-JetBrainsMono --force -y
 choco install nano --force -y
 choco install fzf --force -y
 
