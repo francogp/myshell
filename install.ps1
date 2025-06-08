@@ -16,8 +16,8 @@ choco install nano --force -y
 choco install fzf --force -y
 
 Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
-Install-Module -Name PSReadLine -Force -AllowPrerelease -SkipPublisherCheck
-Install-Module -Name Terminal-Icons -Repository PSGallery -Force
+Install-Module -Name PSReadLine -scope CurrentUser -Force -AllowPrerelease -SkipPublisherCheck
+Install-Module -Name Terminal-Icons -Repository PSGallery -scope CurrentUser -Force
 Install-Module -Name PSFzf -scope CurrentUser -Force
 
 If (Test-Path -Path "$PSScriptRoot\mods\install.ps1" ) {
