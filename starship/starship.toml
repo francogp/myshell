@@ -102,15 +102,15 @@ min_time = 1000
 format = " [$symbol$percentage]($style)"
 disabled = false
 
-[[battery.display]]  
+[[battery.display]]
 threshold = 20
 style = "bold red"
 
-[[battery.display]] 
+[[battery.display]]
 threshold = 40
 style = "bold yellow"
 
-[[battery.display]]  
+[[battery.display]]
 threshold = 100
 style = "bold white"
 
@@ -183,7 +183,7 @@ heuristic = false
 
 [python]
 format = ' via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\))]($style)'
-python_binary = "python3"
+python_binary = "python"
 symbol = "🐍"
 
 [nodejs]
