@@ -38,9 +38,9 @@ sudo cp "${SCRIPT_DIR}/starship/starship.toml" "/root/.config/starship.toml" || 
 
 echo "* fonts.."
 mkdir -p ~/.local/share/fonts && cd ~/.local/share/fonts || exit 100
-curl -fLo "JetBrains Mono Regular Nerd Font Mono.ttf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/Regular/JetBrainsMonoNerdFont-Regular.ttf || exit 100
-curl -fLo "JetBrains Mono Regular Nerd Font Mono Regular.ttf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/Regular/JetBrainsMonoNerdFontMono-Regular.ttf || exit 100
-curl -fLo "JetBrains Mono Regular Nerd Font Mono Propo Regular.ttf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/Regular/JetBrainsMonoNerdFontPropo-Regular.ttf || exit 100
+# curl -fLo "JetBrains Mono Regular Nerd Font Mono.ttf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/Regular/JetBrainsMonoNerdFont-Regular.ttf || exit 100
+# curl -fLo "JetBrains Mono Regular Nerd Font Mono Regular.ttf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/Regular/JetBrainsMonoNerdFontMono-Regular.ttf || exit 100
+# curl -fLo "JetBrains Mono Regular Nerd Font Mono Propo Regular.ttf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/Regular/JetBrainsMonoNerdFontPropo-Regular.ttf || exit 100
 fc-cache -f -v || exit 100
 
 [[ -f "${HOME}/.myshell/mods/update.sh" ]] && source "${HOME}/.myshell/mods/update.sh"

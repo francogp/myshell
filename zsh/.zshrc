@@ -93,6 +93,10 @@ zstyle ':omz:plugins:nvm' lazy yes
 #zstyle ':autocomplete:*' default-context history-incremental-search-backward
 #zstyle ':autocomplete:history-incremental-search-backward:*' min-input 1
 
+
+# If the above didn't help or you want to skip the verification of insecure directories
+ZSH_DISABLE_COMPFIX="true"
+
 source $ZSH/oh-my-zsh.sh
 [[ -f "${HOME}/.fzf.zsh" ]] && source "${HOME}/.fzf.zsh"
 
